@@ -12,7 +12,7 @@ function HomeButton() {
     return (
         <div>
             <form onSubmit={handleSubmit} >
-                <button type="submit">Home</button>
+                <button type="submit">Current</button>
             </form>
             <br/>
         </div>

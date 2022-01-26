@@ -9,6 +9,7 @@ export const fetchCurrentWeather = (userLocation) => {
              res.json().then((currentWeather) => dispatch(addCurrentWeather(currentWeather)))
             } else {
                 res.json().then((res) => dispatch(addErrors(res))) 
+                console.log("error", res.status, res.statusText)
           }
         }) 
     }

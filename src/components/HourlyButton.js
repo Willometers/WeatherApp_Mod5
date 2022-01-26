@@ -12,7 +12,7 @@ function HourlyButton() {
     return (
         <div>
             <form onSubmit={handleSubmit} >
-                <button type="submit">Hourly</button>
+                <button type="submit">24 Hour</button>
             </form>
             <br/>
         </div>

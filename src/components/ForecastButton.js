@@ -12,7 +12,7 @@ function ForecastButton() {
     return (
         <div>
             <form onSubmit={handleSubmit} >
-                <button type="submit">Forecast</button>
+                <button type="submit">3 Day Forecast</button>
             </form>
             <br/>
         </div>

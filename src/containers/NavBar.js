@@ -3,7 +3,6 @@ import ForecastButton from "../components/ForecastButton"
 import HourlyButton from "../components/HourlyButton"
 import { useSelector } from 'react-redux'
 
-
 function NavBar() {
 
     const state = useSelector(state => state)
