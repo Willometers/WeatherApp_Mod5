@@ -1,26 +1,29 @@
 import {
   BrowserRouter as Router, 
   Routes,
-  Route,
+  Route
 } from 'react-router-dom'
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import Show from './components/Show'
 import { fetchCurrentWeather } from './store/actions/weatherActions'
+import { addCurrentLocation } from './store/actions/locationsActions'
 import SearchBar from './components/SearchBar'
 import ForecastShow from './components/ForecastShow'
+import NavBar from './containers/NavBar'
+import HourlyContainer from './containers/HourlyContainer'
 
 function App() {
   const dispatch = useDispatch()
 
-  // find users lat/long to show their location's current weather at start
   useEffect(() => {
      navigator.geolocation.getCurrentPosition(
       function(position) {
         const lat = position.coords.latitude;
         const long = position.coords.longitude;
-        const location = {lat, long};
-        dispatch(fetchCurrentWeather(location))
+        const userLocation = {lat, long};
+        dispatch(fetchCurrentWeather(userLocation))
+        dispatch(addCurrentLocation(userLocation))
       },
     );
   })
@@ -28,6 +31,8 @@ function App() {
   return (
     <Router>
       <div className="App">
+        <NavBar />
+        <br/>
         <SearchBar />
           <Routes>
 
@@ -37,10 +42,16 @@ function App() {
             element={<Show/>} 
             />
 
-            <Route 
+          <Route 
             path="/forecast" 
             index 
             element={<ForecastShow/>} 
+            />
+
+          <Route 
+            path="/hourly" 
+            index 
+            element={<HourlyContainer/>} 
             />
 
           </Routes>
