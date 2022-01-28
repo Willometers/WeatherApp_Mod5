@@ -1,8 +1,9 @@
 import { useSelector } from 'react-redux'
 
+
 function ForecastShow() {
     const weather = useSelector(state => state.weather[0])
-    console.log(weather)
+    console.log("3 Day", weather)
   
     if (weather === undefined)
         return (

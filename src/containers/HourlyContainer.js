@@ -6,12 +6,13 @@ function HourlyContainers() {
     // console.log("day", weather.forecast.forecastday[0])
     // console.log("hour", weather.forecast.forecastday[0].hour[0])
 
-
+    let dateObj = new Date()
     // iterate over days and then hours?
     if (weather != undefined)
         return (
             <div>
                 <h1>{weather.location.name}, {weather.location.region}</h1>
+                <h2>Today</h2>
                 <Hourly weather={weather}/>
             </div>
         )
