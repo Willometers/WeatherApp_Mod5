@@ -12,6 +12,7 @@ import SearchBar from './components/SearchBar'
 import ForecastShow from './components/ForecastShow'
 import NavBar from './containers/NavBar'
 import HourlyContainer from './containers/HourlyContainer'
+import "./App.css";
 
 function App() {
   const dispatch = useDispatch()
@@ -29,7 +30,9 @@ function App() {
   })
 
   return (
+
     <Router>
+      
       <div className="App">
         <NavBar />
         <br/>

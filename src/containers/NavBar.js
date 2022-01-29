@@ -20,13 +20,13 @@ function NavBar() {
         )
     else
         return (
-            <div>
+            <div style={{  
+                display: "grid",  
+                gridTemplateColumns: "1fr 1fr 1fr"  
+              }}>
                 <HomeButton/>
-                <br/>
                 <HourlyButton/>
-                <br/>
                 <ForecastButton/>
-                <br/>
             </div>
         )
 }

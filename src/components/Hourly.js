@@ -1,3 +1,4 @@
+import moment from 'moment';
 
 const Hourly = (weather) => {
   
@@ -13,14 +14,15 @@ const Hourly = (weather) => {
     else
         return (
             <div>
-                
                 {hourlyData.map((hour) => (
-                    <div key={hour.time_epoch}>
-                    <h2>{(hour.time).slice(11, 16)}</h2>
+                    <div key={hour.time_epoch} style={{  
+                        display: "grid",  
+                        gridTemplateColumns: "1fr 1fr 1fr 1fr"  
+                      }}>
+                    {moment().format("h a") === moment(hour.time).format("h a") ? <h2 style={{color:'red'}}>{moment(hour.time).format("h:mm a")}</h2> : <h2>{moment(hour.time).format("h:mm a")}</h2> }
                     <img src={hour.condition.icon} alt={hour.condition.text}/>
                     <h4>{hour.temp_f}°F</h4>
                     <h4>{hour.condition.text}</h4>
-                        <br/>
                     </div>
                 ))}
             </div>

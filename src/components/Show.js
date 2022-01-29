@@ -13,16 +13,30 @@ function Show() {
     else
         return (
             <div>
-                <h1>{weather.location.name}, {weather.location.region}</h1>
-                <h2>Currently</h2>
-                <img src={weather.current.condition.icon} alt={weather.current.condition.text}/>
+            <h1>{weather.location.name}, {weather.location.region}</h1>
+            <br/>
+            <h2>Currently</h2>
+            <div style={{  
+                display: "grid",  
+                gridTemplateColumns: "1fr"  
+                }}>
+                <img src={weather.current.condition.icon} 
+                alt={weather.current.condition.text} 
+                style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "right",
+                    height: "350%",
+                    margin: "5",
+                    opacity: "75%",
+                    padding: "30px"
+                    }}/>
                 <h4>{weather.current.condition.text}</h4>
                 <h4>Current Temperature: {weather.current.temp_f}°F</h4>
                 <h4>Feels Like: {weather.current.feelslike_f}°</h4>
                 <h4>Wind Gusts: {weather.current.wind_mph} mph</h4>
             </div>
-            
+            </div>
         );
 }
-
 export default Show
