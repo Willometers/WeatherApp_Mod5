@@ -7,7 +7,6 @@ function Show() {
         return (
             <div>
                 <h2 style={{color:'red'}}>loading...</h2>
-             
             </div>
         );
     else

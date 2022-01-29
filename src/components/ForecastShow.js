@@ -1,7 +1,6 @@
 import { useSelector } from 'react-redux'
 import moment from 'moment';
 
-
 function ForecastShow() {
     const weather = useSelector(state => state.weather[0])
     console.log("3 Day", weather)
@@ -48,5 +47,4 @@ function ForecastShow() {
             </div>
         );
 }
-
 export default ForecastShow
