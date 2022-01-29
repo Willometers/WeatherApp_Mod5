@@ -18,8 +18,8 @@ const Hourly = (weather) => {
                     <div key={hour.time_epoch}>
                     <h2>{(hour.time).slice(11, 16)}</h2>
                     <img src={hour.condition.icon} alt={hour.condition.text}/>
-                    <h3>{hour.temp_f}°F</h3>
-                    <h3>{hour.condition.text}</h3>
+                    <h4>{hour.temp_f}°F</h4>
+                    <h4>{hour.condition.text}</h4>
                         <br/>
                     </div>
                 ))}

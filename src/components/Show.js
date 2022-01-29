@@ -17,7 +17,8 @@ function Show() {
                 <h2>Currently</h2>
                 <img src={weather.current.condition.icon} alt={weather.current.condition.text}/>
                 <h4>{weather.current.condition.text}</h4>
-                <h4>{weather.current.temp_f}°F</h4>
+                <h4>Current Temperature: {weather.current.temp_f}°F</h4>
+                <h4>Feels Like: {weather.current.feelslike_f}°</h4>
                 <h4>Wind Gusts: {weather.current.wind_mph} mph</h4>
             </div>
             

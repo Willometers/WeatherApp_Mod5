@@ -3,11 +3,7 @@ import Hourly from '../components/Hourly';
 
 function HourlyContainers() {
     const weather = useSelector(state => state.weather[0])
-    // console.log("day", weather.forecast.forecastday[0])
-    // console.log("hour", weather.forecast.forecastday[0].hour[0])
 
-    let dateObj = new Date()
-    // iterate over days and then hours?
     if (weather != undefined)
         return (
             <div>
