@@ -1,4 +1,6 @@
 import { useSelector } from 'react-redux'
+import moment from 'moment';
+
 
 function Show() {
     const weather = useSelector(state => state.weather[0])
@@ -13,8 +15,10 @@ function Show() {
         return (
             <div>
             <h1>{weather.location.name}, {weather.location.region}</h1>
+            <h3>{weather.location.country}</h3>
             <br/>
-            <h2>Currently</h2>
+            <h2>{moment().format('dddd')}</h2>
+            <h3>{moment().format('LL')}</h3>
             <div style={{  
                 display: "grid",  
                 gridTemplateColumns: "1fr"  
@@ -27,8 +31,8 @@ function Show() {
                     alignItems: "right",
                     height: "350%",
                     margin: "5",
-                    opacity: "75%",
-                    padding: "30px"
+                    opacity: "45%",
+                    padding: "10px"
                     }}/>
                 <h4>{weather.current.condition.text}</h4>
                 <h4>Current Temperature: {weather.current.temp_f}°F</h4>

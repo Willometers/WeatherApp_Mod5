@@ -6,6 +6,8 @@ function SaveButton() {
         console.log("Save")
     }
     // loggedin? post route sign up : post route login && post to location#create
+    // state.weather.location = searched location
+    // state.location = browser's static physical location
 
     return (
         <div>

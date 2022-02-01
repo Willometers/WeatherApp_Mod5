@@ -3,6 +3,7 @@ import ForecastButton from "../components/ForecastButton"
 import HourlyButton from "../components/HourlyButton"
 import { useSelector } from 'react-redux'
 import SaveButton from "../components/SaveButton"
+import Signup from "../components/Signup"
 
 function NavBar() {
 
@@ -26,6 +27,7 @@ function NavBar() {
                 display: "grid",  
                 gridTemplateColumns: "1fr 1fr 1fr 1fr"  
               }}>
+                <Signup/>
                 <HomeButton/>
                 <HourlyButton/>
                 <ForecastButton/>

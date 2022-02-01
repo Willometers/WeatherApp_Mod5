@@ -21,8 +21,8 @@ const Hourly = (weather) => {
                       }}>
                     {moment().format("h a") === moment(hour.time).format("h a") ? <h2 style={{color:'red'}}>{moment(hour.time).format("h:mm a")}</h2> : <h2>{moment(hour.time).format("h:mm a")}</h2> }
                     <img src={hour.condition.icon} alt={hour.condition.text}/>
-                    <h4>{hour.temp_f}°F</h4>
                     <h4>{hour.condition.text}</h4>
+                    <h4>{hour.temp_f}°F</h4>
                     </div>
                 ))}
             </div>

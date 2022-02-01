@@ -1,7 +1,7 @@
 import APIKey from '../../APIKey'
 // import { addErrors } from './errorActions'
 
-// ADD_WEATHER
+// ADD_WEATHER at start of program using browser location, physical location saved in store
 export const fetchCurrentWeather = (userLocation) => {   
     return dispatch => { fetch(`${APIKey}&q=${userLocation.lat}${" "}${userLocation.long}&days=5&aqi=no&alerts=no`)
     .then((res) => {
@@ -15,7 +15,7 @@ export const fetchCurrentWeather = (userLocation) => {
     }
 }
 
-// SEARCH_WEATHER
+// SEARCH_WEATHER via searchbar input to change q= and hold weather.location in store
 export const fetchSearchWeather = (searchLocation) => {   
     return dispatch => { fetch(`${APIKey}&q=${searchLocation}&days=5&aqi=no&alerts=no`)
     .then((res) => {

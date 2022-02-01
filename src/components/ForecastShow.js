@@ -15,10 +15,12 @@ function ForecastShow() {
         return (
             <div>
                 <h1>{weather.location.name}, {weather.location.region}</h1>
+                <h3>{weather.location.country}</h3>
                 <br/>
                 {weather.forecast.forecastday.map((day) => (
                     <div>
                     <h1>{moment(day.date).format("dddd")}</h1>
+                    <h3>{moment(day.date).format('LL')}</h3>
                     <div key={day.date_epoch} style={{  
                         display: "grid",  
                         gridTemplateColumns: "1fr 1fr"  
