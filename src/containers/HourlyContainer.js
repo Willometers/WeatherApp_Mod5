@@ -2,7 +2,6 @@ import { useSelector } from 'react-redux'
 import Hourly from '../components/Hourly';
 import moment from 'moment';
 
-
 function HourlyContainers() {
     const weather = useSelector(state => state.weather[0])
 

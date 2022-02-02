@@ -1,9 +1,15 @@
+import { useSelector } from 'react-redux'
 
 function SaveButton() {
+    const weather = useSelector(state => state.weather[0])
+
 
     const handleSubmit = (e) => {
         e.preventDefault()
         console.log("Save")
+        console.log(weather.location.lat)
+        fetch("")
+
     }
     // loggedin? post route sign up : post route login && post to location#create
     // state.weather.location = searched location

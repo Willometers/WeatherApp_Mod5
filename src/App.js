@@ -12,10 +12,18 @@ import SearchBar from './components/SearchBar'
 import ForecastShow from './components/ForecastShow'
 import NavBar from './containers/NavBar'
 import HourlyContainer from './containers/HourlyContainer'
+import Login from './components/Login'
 import "./App.css";
 
 function App() {
   const dispatch = useDispatch()
+
+  useEffect(() => { 
+    fetch("me")
+    .then((res) => res.json())
+    .then((res) => console.log(res))
+    }, []
+  )
 
   useEffect(() => {
      navigator.geolocation.getCurrentPosition(
@@ -55,6 +63,12 @@ function App() {
             path="/hourly" 
             index 
             element={<HourlyContainer/>} 
+            />
+
+          <Route 
+            path="/login" 
+            index 
+            element={<Login/>} 
             />
 
           </Routes>
