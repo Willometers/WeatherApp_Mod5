@@ -14,6 +14,7 @@ import NavBar from './containers/NavBar'
 import HourlyContainer from './containers/HourlyContainer'
 import Login from './components/Login'
 import "./App.css";
+import { addUser } from '../src/store/actions/locationsActions.js'
 
 function App() {
   const dispatch = useDispatch()
@@ -21,7 +22,8 @@ function App() {
   useEffect(() => { 
     fetch("me")
     .then((res) => res.json())
-    .then((res) => console.log(res))
+    // .then((res) => console.log("user present", res))
+    .then((res) => dispatch(addUser(res.id)))
     }, []
   )
 
@@ -32,7 +34,7 @@ function App() {
         const long = position.coords.longitude;
         const userLocation = {lat, long};
         dispatch(fetchCurrentWeather(userLocation))
-        dispatch(addCurrentLocation(userLocation))
+        // dispatch(addCurrentLocation(userLocation))
       },
     );
   })
