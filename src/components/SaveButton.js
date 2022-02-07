@@ -1,17 +1,17 @@
 import { useSelector } from 'react-redux'
+import { useDispatch } from "react-redux"
+import { addErrors } from "../store/actions/weatherActions"
 
-function SaveButton() {
+const SaveButton = () => {
     const weather = useSelector(state => state.weather[0])
-    console.log("user stuff", useSelector(state => state.location))
     const user_info = useSelector(state => state.location)
+    const dispatch = useDispatch()
 
     const handleSubmit = (e) => {
         e.preventDefault()
         const location = weather.location.name
         const lat = weather.location.lat
         const lon = weather.location.lon
-        const usery = user_info[0]
-        console.log(usery)
 
         fetch("save", {
         method: 'POST', 
@@ -22,14 +22,19 @@ function SaveButton() {
             location: location, 
             lat: lat, 
             lon: lon,
-            user_id: usery
+            user_id: user_info[0].id
             })
+        }).then((res) => {
+            if (res.ok) {
+                res.json()
+                console.log("location saved", res)
+            } else {
+                res.json().then((res) => dispatch(addErrors(res)))
+                console.log("error", res.status, res.statusText)
+            }
         })
-        .then((res) => res.json())
-        .then((res) => console.log("save response", res))
-    }
+}
 
-    if(user_info) 
         return (
             <div>
                 <form onSubmit={handleSubmit} >
@@ -38,13 +43,6 @@ function SaveButton() {
                 <br/>
             </div>
         );
-    else 
-        return (
-            <div>
-
-            </div>
-        )
-    
 }
 
 export default SaveButton

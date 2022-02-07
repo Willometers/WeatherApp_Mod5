@@ -1,13 +1,15 @@
 import React, { useState } from "react"
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from "react-redux"
+import { addErrors } from "../store/actions/weatherActions"
 
-const URL = "login"
 
 function Login() {
-
-    // const navigate = useNavigate()
     const [email, setEmail ] = useState("")
     const [password, setPassword ] = useState("")
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
+
 
     function handleEmail(e) {
         e.preventDefault()
@@ -20,16 +22,22 @@ function Login() {
     function handleSubmit(e) {
         e.preventDefault()
         console.log("login")
-        fetch(URL, {
+        fetch("login", {
             method: 'POST', 
             headers: {
               'Content-Type': 'application/json',
             },
             body: JSON.stringify({email : email, password : password})
           })
-          .then((res) => res.json())
-          .then((res) => console.log("response", res))
-        //   .then(navigate("/"))
+          .then((res) => {
+            if (res.ok) {
+              res.json().then((user) => console.log(user));
+              navigate("/")
+            } else {
+                res.json().then((res) => dispatch(addErrors(res)))
+                console.log("error", res.status, res.statusText)
+            }
+          }) 
     }
 
     return (
@@ -44,7 +52,6 @@ function Login() {
         </form>
     </div>
     )
-
 }
 
 export default Login

@@ -7,7 +7,6 @@ import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import Show from './components/Show'
 import { fetchCurrentWeather } from './store/actions/weatherActions'
-import { addCurrentLocation } from './store/actions/locationsActions'
 import SearchBar from './components/SearchBar'
 import ForecastShow from './components/ForecastShow'
 import NavBar from './containers/NavBar'
@@ -22,8 +21,7 @@ function App() {
   useEffect(() => { 
     fetch("me")
     .then((res) => res.json())
-    // .then((res) => console.log("user present", res))
-    .then((res) => dispatch(addUser(res.id)))
+    .then((res) => dispatch(addUser(res)))
     }, []
   )
 
@@ -34,7 +32,6 @@ function App() {
         const long = position.coords.longitude;
         const userLocation = {lat, long};
         dispatch(fetchCurrentWeather(userLocation))
-        // dispatch(addCurrentLocation(userLocation))
       },
     );
   })

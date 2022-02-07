@@ -34,5 +34,5 @@ const addCurrentWeather = (currentWeather) => ({type: 'ADD_CURRENT_WEATHER', pay
 // ADD_SEARCH_WEATHER
 const addSearchWeather = (searchWeather) => ({type: 'ADD_SEARCH_WEATHER', payload: searchWeather})
 // Add_ERRORS
-const addErrors = (errors) => ({type: 'ADD_ERRORS', payload: errors})
+export const addErrors = (errors) => ({type: 'ADD_ERRORS', payload: errors})
 

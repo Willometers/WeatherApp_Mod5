@@ -1,16 +1,17 @@
 import React, { useState } from "react"
-import { useNavigate } from 'react-router-dom';
-
-const URL = "signup"
-// if no errors navigate to Saved FavoritesShow page, else sho errors(already done)
+import { useSelector } from "react-redux"; 
+import { useNavigate } from "react-router-dom"
+import { useDispatch } from "react-redux"
+import { addErrors } from "../store/actions/weatherActions"
 
 function Signup() {
 
-    const navigate = useNavigate()
+    const [noMatch, setNoMatch ] = useState("")
     const [email, setEmail ] = useState("")
     const [password, setPassword ] = useState("")
     const [passwordConfirmation, setPasswordConfirmation ] = useState("")
-    const [errors, setErrors] = useState([])
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
 
     function handleEmail(e) {
         e.preventDefault()
@@ -25,68 +26,46 @@ function Signup() {
         setPasswordConfirmation(e.target.value)
     }
 
-    // const AlertShow = () => {
-    //     if (errors)
-    //         return (
-    //             errors.error.map((err) => {
-    //                 return (
-    //                   <div style={{color:'red'}}>{err}</div>
-    //                     )
-    //                 }))
-    //     else {
-    //         console.log("no alert triggered")
-    //     }
-    // }  
-    
     function handleSubmit(e) {
         e.preventDefault()
-        if(password === passwordConfirmation) {
-            console.log("sign up",URL, email, password, passwordConfirmation)
-            fetch(URL, {
+        if (password === passwordConfirmation) {
+            fetch("signup", {
                 method: 'POST', 
                 headers: {
                   'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
                       email: email,
-                      password: password
+                      password: password,
+                      password: passwordConfirmation
                   })
-              })
-              .then(res => res.json())
-              .then(data => {
-                console.log("Response", data);
-                if(data.error === undefined)
-                    // navigate("/login")
-                    console.log("no errors")
-                    // then send to login page to create session in new component
-                else
-                    setErrors(...errors, data);
-                    console.log("server error", data)
-              })
-        }
-        else {
-            setErrors(...errors, ["passwords do not match"])
-            console.log("pw dont match", errors)
+              }).then((res) => {
+                if (res.ok) {
+                    res.json().then(navigate("/"))
+                    console.log("signed up", res)
+                } else {
+                    res.json().then((res) => dispatch(addErrors(res)))
+                    console.log("error", res.status, res.statusText)
+                }
+            }) 
+        } else {
+            setNoMatch("passwords do no match")
         }
     }
 
-    return (
-        <div >
-        <form onSubmit={handleSubmit} >
-            <input placeholder="Email" 
-                onChange={handleEmail}/>
-            <input placeholder="Password" 
-                onChange={handlePassword}/>
-            <input placeholder="Password Confirmation" 
-                onChange={handlePasswordConfirmation}/>
-            <button>Submit</button>
-            {/* <div>{AlertShow()}</div> */}
-        </form>
-        </div>
-    )
-  
+        return (
+            <div >
+            <form onSubmit={handleSubmit} >
+                <input placeholder="Email" 
+                    onChange={handleEmail}/>
+                <input placeholder="Password" 
+                    onChange={handlePassword}/>
+                <input placeholder="Password Confirmation" 
+                    onChange={handlePasswordConfirmation}/>
+                <p>{noMatch}</p>
+                <button>Submit</button>
+            </form>
+            </div>
+        )  
 }
-
 export default Signup
-
-// split up components???
