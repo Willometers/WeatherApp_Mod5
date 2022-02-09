@@ -11,7 +11,6 @@ const user_info = useSelector(state => state.location)
 const navigate = useNavigate()
 const dispatch = useDispatch()
 
-
 const handleSubmit = (e) => {
     // e.preventDefault()
     fetch("logout", {
@@ -22,7 +21,7 @@ const handleSubmit = (e) => {
         body: JSON.stringify({user_id : user_info[0].id})
       }).then((res) => {
         if (res.ok) {
-            res.json().then(navigate("login"))
+            res.json().then(navigate("/"))
         } else {
             res.json().then((res) => dispatch(addErrors(res)))
             console.log("error", res.status, res.statusText)

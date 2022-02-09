@@ -6,7 +6,7 @@ import { addErrors } from "../store/actions/weatherActions"
 
 function Signup() {
 
-    const [noMatch, setNoMatch ] = useState("")
+    const [errorMessage, setErrorMessage ] = useState("")
     const [email, setEmail ] = useState("")
     const [password, setPassword ] = useState("")
     const [passwordConfirmation, setPasswordConfirmation ] = useState("")
@@ -49,7 +49,8 @@ function Signup() {
                 }
             }) 
         } else {
-            setNoMatch("passwords do no match")
+            setErrorMessage("passwords must match")
+            console.log(errorMessage)
         }
     }
 
@@ -62,8 +63,7 @@ function Signup() {
                     onChange={handlePassword}/>
                 <input placeholder="Password Confirmation" 
                     onChange={handlePasswordConfirmation}/>
-                <p>{noMatch}</p>
-                <button>Submit</button>
+                <button>Signup</button>
             </form>
             </div>
         )  

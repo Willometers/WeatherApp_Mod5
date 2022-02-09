@@ -14,6 +14,7 @@ import HourlyContainer from './containers/HourlyContainer'
 import Login from './components/Login'
 import "./App.css";
 import { addUser } from '../src/store/actions/locationsActions.js'
+import MapShow from './components/MapShow'
 
 function App() {
   const dispatch = useDispatch()

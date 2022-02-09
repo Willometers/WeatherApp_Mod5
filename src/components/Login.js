@@ -10,17 +10,14 @@ function Login() {
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
-
     function handleEmail(e) {
-        e.preventDefault()
         setEmail(e.target.value)
     }
     function handlePassword(e) {
-        e.preventDefault()
         setPassword(e.target.value)
     }
     function handleSubmit(e) {
-        e.preventDefault()
+        // e.preventDefault()
         console.log("login")
         fetch("login", {
             method: 'POST', 

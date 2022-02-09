@@ -1,11 +1,10 @@
 import { useSelector } from 'react-redux'
 import moment from 'moment';
 
-
 function Show() {
     const weather = useSelector(state => state.weather[0])
 
-    if (weather === undefined)
+    if (weather === undefined || undefined)
         return (
             <div>
                 <h2 style={{color:'red'}}>loading...</h2>
