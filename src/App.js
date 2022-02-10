@@ -15,6 +15,7 @@ import Login from './components/Login'
 import "./App.css";
 import { addUser } from '../src/store/actions/locationsActions.js'
 import MapShow from './components/MapShow'
+import { fetchSkiAreas } from '../src/store/actions/skiAreasActions.js'
 
 function App() {
   const dispatch = useDispatch()
@@ -36,6 +37,11 @@ function App() {
       },
     );
   })
+
+  useEffect(() => { 
+    dispatch(fetchSkiAreas())
+  }, []
+  )
 
   return (
 

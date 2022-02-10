@@ -3,9 +3,10 @@ import { compose, combineReducers } from 'redux'
 import thunk from 'redux-thunk'
 import { weather } from './reducers/weatherReducers'
 import { location } from './reducers/locationReducers'
+import { skiAreas } from './reducers/skiAreasReducers'
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
-const rootReducer = combineReducers({ weather, location })
+const rootReducer = combineReducers({ weather, location, skiAreas })
 
 export const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)))

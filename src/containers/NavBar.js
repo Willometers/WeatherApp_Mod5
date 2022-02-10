@@ -5,6 +5,7 @@ import SaveButton from "../components/SaveButton"
 import Signup from "../components/Signup"
 import LogoutButton from "../components/LogoutButton"
 import ErrorShow from "../components/ErrorShow"
+import SkiAreaDropdown from "../components/SkiAreaDropdown"
 
 
 function NavBar() {
@@ -15,6 +16,7 @@ function NavBar() {
                 gridTemplateColumns: "1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr"  
               }}>
                 <ErrorShow/>
+                <SkiAreaDropdown/>
                 <LogoutButton/>
                 <Signup/>
                 <HomeButton/>
