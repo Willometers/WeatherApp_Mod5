@@ -6,7 +6,6 @@ export const fetchSkiAreas = () => {
     .then((res) => {
         if (res.ok) {
             res.json().then((skiAreas) => dispatch(addSkiAreas(skiAreas)))
-            .then(console.log("skiArea res", res))
         } else {
             res.json().then((res) => dispatch(addSkiErrors(res)))
             console.log("error", res.status, res.statusText)

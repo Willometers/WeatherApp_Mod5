@@ -7,7 +7,6 @@ import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import Show from './components/Show'
 import { fetchCurrentWeather } from './store/actions/weatherActions'
-import SearchBar from './components/SearchBar'
 import ForecastShow from './components/ForecastShow'
 import NavBar from './containers/NavBar'
 import HourlyContainer from './containers/HourlyContainer'
@@ -16,6 +15,10 @@ import "./App.css";
 import { addUser } from '../src/store/actions/locationsActions.js'
 import MapShow from './components/MapShow'
 import { fetchSkiAreas } from '../src/store/actions/skiAreasActions.js'
+import MySavedLocationsShow from './components/MySavedLocationsShow'
+import SlideMenu from './containers/SlideMenu'
+import SearchBar from './components/SearchBar'
+
 
 function App() {
   const dispatch = useDispatch()
@@ -48,9 +51,11 @@ function App() {
     <Router>
       
       <div className="App">
-        <NavBar />
+        {/* <NavBar /> */}
+        <SlideMenu/>
         <br/>
-        <SearchBar />
+        <SearchBar/>
+        <br/>
           <Routes>
 
           <Route 
@@ -76,6 +81,19 @@ function App() {
             index 
             element={<Login/>} 
             />
+
+          <Route 
+            path="/saved" 
+            index 
+            element={<MySavedLocationsShow/>} 
+            />
+            
+{/* 
+          <Route 
+            path="/login" 
+            index 
+            element={<Login/>} 
+          /> */}
 
           </Routes>
       </div>

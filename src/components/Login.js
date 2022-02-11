@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from "react-redux"
 import { addErrors } from "../store/actions/weatherActions"
+import Signup from "./Signup";
 
 
 function Login() {
@@ -9,6 +10,7 @@ function Login() {
     const [password, setPassword ] = useState("")
     const navigate = useNavigate()
     const dispatch = useDispatch()
+    const [hello, setHello] = useState("")
 
     function handleEmail(e) {
         setEmail(e.target.value)
@@ -17,7 +19,7 @@ function Login() {
         setPassword(e.target.value)
     }
     function handleSubmit(e) {
-        // e.preventDefault()
+        e.preventDefault()
         console.log("login")
         fetch("login", {
             method: 'POST', 
@@ -30,6 +32,7 @@ function Login() {
             if (res.ok) {
               res.json().then((user) => console.log(user));
               navigate("/")
+              setHello(res)
             } else {
                 res.json().then((res) => dispatch(addErrors(res)))
                 console.log("error", res.status, res.statusText)
@@ -47,6 +50,10 @@ function Login() {
                 onChange={handlePassword}/>
             <button>Login</button>
         </form>
+        <br/>
+        <h4>OR</h4>
+        <br/>
+        < Signup />
     </div>
     )
 }
