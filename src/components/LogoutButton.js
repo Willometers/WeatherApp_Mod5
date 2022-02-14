@@ -11,7 +11,7 @@ const navigate = useNavigate()
 const dispatch = useDispatch()
 
 const handleSubmit = (e) => {
-    // e.preventDefault()
+    e.preventDefault()
     fetch("logout", {
         method: 'DELETE', 
         headers: {
@@ -21,21 +21,33 @@ const handleSubmit = (e) => {
       }).then((res) => {
         if (res.ok) {
             res.json().then(navigate("/"))
+            window.location.reload(false);
         } else {
             res.json().then((res) => dispatch(addErrors(res)))
             console.log("error", res.status, res.statusText)
+            window.location.reload(false);
         }
     })
 }
 
-return (
-    <div>
-        <form onSubmit={handleSubmit} >
-            <button type="submit">Logout</button>
-        </form>
-        <br/>
-    </div>
-);
+    if(user_info[0])
+        if(!user_info[0].error)
+        return (
+                <div>
+                    <form onSubmit={handleSubmit} >
+                        <button type="submit">Logout</button>
+                    </form>
+                    <br/>
+                </div>
+            );
+            else
+            return (
+                <div></div>
+            )
+        else 
+        return (
+            <div></div>
+        )
 }
 
 export default LogoutButton

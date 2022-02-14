@@ -2,25 +2,20 @@ import { useSelector } from "react-redux"
 
     const ErrorShow = () => {
 
-        const state = useSelector(state => state)
+        const state = useSelector(state => state.weather)
+        // console.log("errorshow", state[1].error.message)
 
-        if(state.weather[1])
-            if(state.weather[1].length = 1)
+        if(state.length > 1)
+            if(state[1])
             return (
                 <div>
-                    <h1 style={{color:'red'}}>{state.weather[1].error.map((err) => 
-                            <h12>{err} </h12>
-                        )}
-                    </h1>
+                    <h1 style={{color:'red'}}>{state[1].error.message}</h1>
                     <br/>
                 </div>
                 )
             else
-            return (
-                <div>
-                    <h1>multiple errors</h1>
-                    <br/>
-                </div>
+            return(
+                <div><h1>big error</h1></div>
             )
         else
                 return (

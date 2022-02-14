@@ -1,9 +1,11 @@
 import React, { useState } from "react"
 import { useDispatch } from "react-redux"
 import { fetchSearchWeather } from '../store/actions/weatherActions'
+import { useNavigate } from 'react-router-dom'
 
 function SearchBar() {
     const dispatch = useDispatch() 
+    const navigate = useNavigate()
 
     const [place, setPlace ] = useState("")
 
@@ -15,6 +17,8 @@ function SearchBar() {
         e.preventDefault()
         console.log("submitted", place)
         dispatch(fetchSearchWeather(place))
+        e.target.reset()
+        navigate("/")
     }
 
     return (

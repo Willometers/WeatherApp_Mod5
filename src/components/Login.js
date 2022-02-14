@@ -4,7 +4,6 @@ import { useDispatch } from "react-redux"
 import { addErrors } from "../store/actions/weatherActions"
 import Signup from "./Signup";
 
-
 function Login() {
     const [email, setEmail ] = useState("")
     const [password, setPassword ] = useState("")
@@ -18,6 +17,7 @@ function Login() {
     function handlePassword(e) {
         setPassword(e.target.value)
     }
+
     function handleSubmit(e) {
         e.preventDefault()
         console.log("login")
@@ -33,9 +33,13 @@ function Login() {
               res.json().then((user) => console.log(user));
               navigate("/")
               setHello(res)
+              window.location.reload(false);
             } else {
                 res.json().then((res) => dispatch(addErrors(res)))
-                console.log("error", res.status, res.statusText)
+                console.log("login error", res.status, res.statusText)
+                // window.location.reload(false);
+                // navigate("/errors" )
+                // make an exclusive login error page or popup
             }
           }) 
     }

@@ -13,12 +13,10 @@ import HourlyContainer from './containers/HourlyContainer'
 import Login from './components/Login'
 import "./App.css";
 import { addUser } from '../src/store/actions/locationsActions.js'
-import MapShow from './components/MapShow'
 import { fetchSkiAreas } from '../src/store/actions/skiAreasActions.js'
 import MySavedLocationsShow from './components/MySavedLocationsShow'
-import SlideMenu from './containers/SlideMenu'
-import SearchBar from './components/SearchBar'
-
+import ErrorShow from './components/ErrorShow'
+import SkiAreaDropdown from "./components/SkiAreaDropdown"
 
 function App() {
   const dispatch = useDispatch()
@@ -49,15 +47,11 @@ function App() {
   return (
 
     <Router>
-      
       <div className="App">
-        {/* <NavBar /> */}
-        <SlideMenu/>
+        <NavBar />
         <br/>
-        <SearchBar/>
-        <br/>
+        <SkiAreaDropdown/>
           <Routes>
-
           <Route 
             path="/" 
             index 
@@ -83,18 +77,16 @@ function App() {
             />
 
           <Route 
+            path="/errors" 
+            index 
+            element={<ErrorShow/>} 
+            />
+
+          <Route 
             path="/saved" 
             index 
             element={<MySavedLocationsShow/>} 
             />
-            
-{/* 
-          <Route 
-            path="/login" 
-            index 
-            element={<Login/>} 
-          /> */}
-
           </Routes>
       </div>
     </Router>

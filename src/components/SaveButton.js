@@ -10,7 +10,8 @@ const SaveButton = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        const location = weather.location.name
+        const location = weather.location.name + "," + " " + weather.location.region
+        console.log("savelocation", location)
         const lat = weather.location.lat
         const lon = weather.location.lon
 

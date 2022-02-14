@@ -1,7 +1,6 @@
 //  show users favorite locations' by current tiles - make clickable and bring back to main show
 import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import MySavedLocationsShow from '../components/MySavedLocationsShow'
 
 function MySavedLocations() {
 
@@ -10,9 +9,9 @@ function MySavedLocations() {
 
     const handleClick = (e) => {
         console.log("clicked", user)
-        navigate("/saved")
+        navigate("/saved");
+        window.location.reload(false);
     }
-
     const handleLogin = (e) => {
         console.log("login", user)
         navigate("/login")
@@ -37,7 +36,6 @@ function MySavedLocations() {
                         <button onClick={handleLogin}> Login/Signup </button>
                     </div>
                 )
-        
     else
         return (
             <div>Loading</div>
