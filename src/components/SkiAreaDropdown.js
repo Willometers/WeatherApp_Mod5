@@ -3,9 +3,6 @@ import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
 import { fetchAreaWeather } from '../store/actions/letsSkiActions'
 import { useState } from 'react'
-import { addMapLocation } from '../store/actions/letsSkiActions'
-import { useEffect } from 'react'
-
 
 const SkiAreaDropdown = (props) => {
 

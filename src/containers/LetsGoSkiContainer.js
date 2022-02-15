@@ -15,8 +15,10 @@ const LetsGoSkiContainer = () => {
     return (
         <div>
             <SkiAreaDropdown setTheResort={setTheResort} />
+            <div style={{display: "grid", gridTemplateColumns: "1fr 1fr"}}>
             <LetsGoSkiShow/>
             <MapShow resort={resort}/>
+            </div>
         </div>
     )
 }

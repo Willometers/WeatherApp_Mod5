@@ -8,13 +8,13 @@ const MapShow = (resort) => {
 
     if(location.length < 1)
         return(
-            <div>Map?</div>
+            <div></div>
             )
     else
         return (
             <div className="map">
                 <iframe
-                    src={`https://www.google.com/maps/embed/v1/place?key=${GoogleKey}&q=${location}&zoom=9`} allowfullscreen width="745" height="480">
+                    src={`https://www.google.com/maps/embed/v1/place?key=${GoogleKey}&q=${location}&zoom=8`} allowfullscreen width="800" height="650">
                 </iframe>
             </div>
 
