@@ -10,7 +10,7 @@ function LetsGoSkiShow() {
     if (weather === undefined || null)
         return (
             <div>
-                <h2 style={{color:'red'}}>...loading</h2>
+                <h2 style={{color:'red'}}>Please choose ski area</h2>
             </div>
         );
     else

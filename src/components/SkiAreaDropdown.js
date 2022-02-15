@@ -6,12 +6,14 @@ import { useState } from 'react'
 import { addMapLocation } from '../store/actions/letsSkiActions'
 import { useEffect } from 'react'
 
-const SkiAreaDropdown = () => {
+
+const SkiAreaDropdown = (props) => {
 
     const skiAreas = useSelector(state => state.skiAreas[0])
     const dispatch = useDispatch()
     const [resort, setResort ] = useState([])
     const weather = useSelector(state => state)
+    props.setTheResort(resort)
 
       const handleSelect = (e) => {
         // e.preventDefault()

@@ -8,15 +8,15 @@ const LetsGoSkiContainer = () => {
     const [resort, setResort ] = useState([])
     console.log("container state", resort)
 
-    const setTheResort = (e) => {
-        setResort(e)
+    const setTheResort = (skiArea) => {
+        setResort(skiArea)
     }
 
     return (
         <div>
             <SkiAreaDropdown setTheResort={setTheResort} />
             <LetsGoSkiShow/>
-            <MapShow />
+            <MapShow resort={resort}/>
         </div>
     )
 }
