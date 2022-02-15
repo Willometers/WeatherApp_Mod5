@@ -1,20 +1,12 @@
-// import { Wrapper } from "@googlemaps/react-wrapper";
-// import { useSelector } from "react-redux"
+import { useSelector } from "react-redux"
+import GoogleMapReact from 'google-map-react'
 
-// function MapShow() {
-//     // The location of Uluru
-//     const location = { lat: 43.34, lng: -76.03 };
-//     // The map, centered at Uluru
-//     const map = new google.maps.Map(document.getElementById("map"), {
-//       zoom: 8,
-//       center: uluru,
-//     });
-//     // The marker, positioned at Uluru
-//     const marker = new google.maps.Marker({
-//       position: uluru,
-//       map: map,
-//     });
-//   }
+function MapShow() {
 
-//   export default MapShow
+    return (
+        <div>Map</div>
+    )
+  }
+
+  export default MapShow
 

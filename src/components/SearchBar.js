@@ -19,6 +19,7 @@ function SearchBar() {
         dispatch(fetchSearchWeather(place))
         e.target.reset()
         navigate("/")
+        // window.location.reload(false);
     }
 
     return (

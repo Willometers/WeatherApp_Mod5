@@ -16,7 +16,7 @@ import { addUser } from '../src/store/actions/locationsActions.js'
 import { fetchSkiAreas } from '../src/store/actions/skiAreasActions.js'
 import MySavedLocationsShow from './components/MySavedLocationsShow'
 import ErrorShow from './components/ErrorShow'
-import SkiAreaDropdown from "./components/SkiAreaDropdown"
+import LetsGoSkiContainer from './containers/LetsGoSkiContainer'
 
 function App() {
   const dispatch = useDispatch()
@@ -50,7 +50,6 @@ function App() {
       <div className="App">
         <NavBar />
         <br/>
-        <SkiAreaDropdown/>
           <Routes>
           <Route 
             path="/" 
@@ -86,6 +85,12 @@ function App() {
             path="/saved" 
             index 
             element={<MySavedLocationsShow/>} 
+            />
+
+          <Route 
+            path="/goski" 
+            index 
+            element={<LetsGoSkiContainer/>} 
             />
           </Routes>
       </div>

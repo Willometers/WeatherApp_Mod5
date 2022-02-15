@@ -7,6 +7,7 @@ import LogoutButton from "../components/LogoutButton"
 import ErrorShow from "../components/ErrorShow"
 import MySavedLocations from "./MySavedLocations"
 import { Navbar, Nav, Container } from 'react-bootstrap'
+import LetsGoSkiContainer from '../components/LetsGoSkiButton.js'
 
 function NavBar() {
   
@@ -16,6 +17,7 @@ function NavBar() {
         <ErrorShow/>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
+            
             <Nav className="me-auto">
               <br/>
               <SearchBar/>
@@ -31,6 +33,7 @@ function NavBar() {
               <SaveButton />
               <br/>
               <MySavedLocations/>
+              <LetsGoSkiContainer/>
             </Nav>
           </Navbar.Collapse>
         </Container>

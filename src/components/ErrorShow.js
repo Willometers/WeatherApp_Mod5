@@ -9,7 +9,8 @@ import { useSelector } from "react-redux"
             if(state[1])
             return (
                 <div>
-                    <h1 style={{color:'red'}}>{state[1].error.message}</h1>
+                    <br/>
+                    <h5 style={{color:'red'}}>{state[1].error.message}</h5>
                     <br/>
                 </div>
                 )
@@ -18,10 +19,10 @@ import { useSelector } from "react-redux"
                 <div><h1>big error</h1></div>
             )
         else
-                return (
+            return (
                 <div>
                 </div>
-                )
+            )
     }  
 
     export default ErrorShow
