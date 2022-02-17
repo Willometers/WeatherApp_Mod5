@@ -14,7 +14,7 @@ const MapShow = (resort) => {
         return (
             <div className="map">
                 <iframe
-                    src={`https://www.google.com/maps/embed/v1/place?key=${GoogleKey}&q=${location}&zoom=8`} allowfullscreen width="800" height="650">
+                    src={`https://www.google.com/maps/embed/v1/place?key=${GoogleKey}&q=${location}&zoom=8`} allowFullScreen width="800" height="650">
                 </iframe>
             </div>
 

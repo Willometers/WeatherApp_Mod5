@@ -12,6 +12,7 @@ function Signup() {
     const [passwordConfirmation, setPasswordConfirmation ] = useState("")
     const navigate = useNavigate()
     const dispatch = useDispatch()
+    const [error, setError] = useState("")
 
     function handleEmail(e) {
         e.preventDefault()
@@ -43,9 +44,11 @@ function Signup() {
                 if (res.ok) {
                     res.json().then(navigate("/"))
                     console.log("signed up", res)
+                    window.location.reload(false)
                 } else {
                     res.json().then((res) => dispatch(addErrors(res)))
                     console.log("error", res.status, res.statusText)
+                    setError(res)
                 }
             }) 
         } else {
@@ -64,6 +67,7 @@ function Signup() {
                 <input placeholder="Password Confirmation" 
                     onChange={handlePasswordConfirmation}/>
                 <button>Signup</button>
+                <h4 style={{color: "red"}}>{error.statusText}</h4>
             </form>
             </div>
         )  

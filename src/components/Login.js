@@ -9,7 +9,7 @@ function Login() {
     const [password, setPassword ] = useState("")
     const navigate = useNavigate()
     const dispatch = useDispatch()
-    const [hello, setHello] = useState("")
+    const [error, setError] = useState("")
 
     function handleEmail(e) {
         setEmail(e.target.value)
@@ -32,14 +32,11 @@ function Login() {
             if (res.ok) {
               res.json().then((user) => console.log(user));
               navigate("/")
-              setHello(res)
               window.location.reload(false);
             } else {
                 res.json().then((res) => dispatch(addErrors(res)))
                 console.log("login error", res.status, res.statusText)
-                // window.location.reload(false);
-                // navigate("/errors" )
-                // make an exclusive login error page or popup
+                setError(res)
             }
           }) 
     }
@@ -53,6 +50,7 @@ function Login() {
             <input placeholder="Password" 
                 onChange={handlePassword}/>
             <button>Login</button>
+            <h4 style={{color: "red"}}>{error.statusText}</h4>
         </form>
         <br/>
         <h4>OR</h4>
