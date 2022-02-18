@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { useSelector } from "react-redux"; 
+import { Form } from 'react-bootstrap'
 import { useNavigate } from "react-router-dom"
 import { useDispatch } from "react-redux"
 import { addErrors } from "../store/actions/weatherActions"
@@ -59,6 +59,7 @@ function Signup() {
 
         return (
             <div >
+            <Form border="secondary" >
             <form onSubmit={handleSubmit} >
                 <input placeholder="Email" 
                     onChange={handleEmail}/>
@@ -69,6 +70,7 @@ function Signup() {
                 <button>Signup</button>
                 <h4 style={{color: "red"}}>{error.statusText}</h4>
             </form>
+            </Form>
             </div>
         )  
 }

@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { Card, Button, Form } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from "react-redux"
 import { addErrors } from "../store/actions/weatherActions"
@@ -43,19 +44,20 @@ function Login() {
 
     return (
         <div >
+            <Form >
+                <form onSubmit={handleSubmit} >
+                    <input placeholder="Email" 
+                        onChange={handleEmail}/>
+                    <input placeholder="Password" 
+                        onChange={handlePassword}/>
+                    <button>Login</button>
+                    <h4 style={{color: "red"}}>{error.statusText}</h4>
+                </form>
+            </Form>
         <br/>
-        <form onSubmit={handleSubmit} >
-            <input placeholder="Email" 
-                onChange={handleEmail}/>
-            <input placeholder="Password" 
-                onChange={handlePassword}/>
-            <button>Login</button>
-            <h4 style={{color: "red"}}>{error.statusText}</h4>
-        </form>
+            <h4>OR</h4>
         <br/>
-        <h4>OR</h4>
-        <br/>
-        < Signup />
+            < Signup />
     </div>
     )
 }
