@@ -2,6 +2,7 @@ import { Card } from 'react-bootstrap'
 import { useSelector } from 'react-redux'
 import moment from 'moment';
 import React from 'react';
+import SaveButton from './SaveButton'
 
 
 function Show() {
@@ -32,6 +33,7 @@ function Show() {
                     <h4>Feels Like: {weather.current.feelslike_f}°</h4>
                     <h4>Wind Gusts: {weather.current.wind_mph} mph</h4>
                 </Card.Text>
+                <SaveButton />
             </Card>
             </div>
         );

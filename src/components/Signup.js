@@ -44,7 +44,7 @@ function Signup() {
                 if (res.ok) {
                     res.json().then(navigate("/"))
                     console.log("signed up", res)
-                    window.location.reload(false)
+                    window.location.reload(false);
                 } else {
                     res.json().then((res) => dispatch(addErrors(res)))
                     console.log("error", res.status, res.statusText)
@@ -59,7 +59,6 @@ function Signup() {
 
         return (
             <div >
-            <Form border="secondary" >
             <form onSubmit={handleSubmit} >
                 <input placeholder="Email" 
                     onChange={handleEmail}/>
@@ -68,9 +67,9 @@ function Signup() {
                 <input placeholder="Password Confirmation" 
                     onChange={handlePasswordConfirmation}/>
                 <button>Signup</button>
-                <h4 style={{color: "red"}}>{error.statusText}</h4>
+                
             </form>
-            </Form>
+            <h4 style={{color: "red"}}>{error.statusText}</h4>
             </div>
         )  
 }

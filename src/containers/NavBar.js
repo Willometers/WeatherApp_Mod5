@@ -31,7 +31,7 @@ function NavBar() {
               <br/>
               <LogoutButton/>
               <br/>
-              <SaveButton />
+              {/* <SaveButton /> */}
               <br/>
               <MySavedLocations/>
               <LetsGoSkiContainer/>

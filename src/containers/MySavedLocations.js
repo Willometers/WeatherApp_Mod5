@@ -32,9 +32,9 @@ function MySavedLocations() {
                 )
             else
                 return (
-                    <div>
-                        <button onClick={handleLogin}> Login/Signup </button>
-                    </div>
+                <div>
+                    <button onClick={handleLogin}> Login/Signup </button>
+                </div>
                 )
     else
         return (
