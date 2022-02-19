@@ -2,8 +2,7 @@ import { useSelector, useDispatch } from "react-redux"
 import { fetchSearchWeather } from "../store/actions/weatherActions"
 import { useNavigate } from "react-router-dom"
 import DeleteFavoriteButton from "./DeleteFavoriteButton"
-import { Card, Button, Form } from 'react-bootstrap'
-
+import { Card } from 'react-bootstrap'
 
 const MySavedLocationsShow = () => {
 
@@ -35,11 +34,13 @@ if (user[0])
             )
         else
             return (
-                <div><h1 style={{color:'red'}}>no saved locations</h1></div>
+                <div><h1 style={{color:'red'}}>No Saved Locations</h1></div>
             )
     else 
     return (
-        <div><h1 style={{color:'red'}}>...loading</h1></div>
+        <div class="spinner-border text-primary" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
     )
 
 

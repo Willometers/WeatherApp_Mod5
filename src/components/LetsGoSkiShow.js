@@ -32,7 +32,7 @@ function LetsGoSkiShow() {
             </CardGroup>
             </div>
         );
-        
+
 }
 
 export default LetsGoSkiShow

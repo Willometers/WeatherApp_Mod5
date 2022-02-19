@@ -1,5 +1,4 @@
 import React, { useState } from "react"
-import { Form } from 'react-bootstrap'
 import { useNavigate } from "react-router-dom"
 import { useDispatch } from "react-redux"
 import { addErrors } from "../store/actions/weatherActions"
@@ -67,9 +66,9 @@ function Signup() {
                 <input placeholder="Password Confirmation" 
                     onChange={handlePasswordConfirmation}/>
                 <button>Signup</button>
-                
             </form>
-            <h4 style={{color: "red"}}>{error.statusText}</h4>
+            {password === passwordConfirmation ? <h8></h8> : <h8 style={{color: "red"}} >Passwords Must Match</h8>}
+            <h6 style={{color: "red"}}>{error.statusText}</h6>
             </div>
         )  
 }

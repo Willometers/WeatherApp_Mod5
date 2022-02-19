@@ -4,7 +4,6 @@ import moment from 'moment';
 import React from 'react';
 import SaveButton from './SaveButton'
 
-
 function Show() {
     const weather = useSelector(state => state.weather[0])
 

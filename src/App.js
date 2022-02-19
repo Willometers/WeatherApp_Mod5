@@ -1,8 +1,4 @@
-import {
-  BrowserRouter as Router, 
-  Routes,
-  Route
-} from 'react-router-dom'
+import { BrowserRouter as Router, Routes,Route } from 'react-router-dom'
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import Show from './components/Show'
@@ -45,7 +41,6 @@ function App() {
   )
 
   return (
-
     <Router>
       <div className="App">
         <NavBar />

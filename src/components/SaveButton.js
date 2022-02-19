@@ -15,11 +15,11 @@ const SaveButton = () => {
         const lat = weather.location.lat
         const lon = weather.location.lon
 
-            fetch("save", {
-            method: 'POST', 
-            headers: {
-            'Content-Type' : 'application/json',
-                },
+        fetch("save", {
+        method: 'POST', 
+        headers: {
+        'Content-Type' : 'application/json',
+            },
             body: JSON.stringify({
                 location: location, 
                 lat: lat, 
@@ -35,7 +35,7 @@ const SaveButton = () => {
                     res.json().then((res) => dispatch(addErrors(res)))
                     console.log("error", res.status, res.statusText)
                 }
-            })
+        })
     }
 
             if(user_info[0])

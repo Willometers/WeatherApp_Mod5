@@ -27,7 +27,8 @@ const SkiAreaDropdown = (props) => {
         )
     else
         return (
-        <Dropdown >
+          <div >
+        <Dropdown  >
             <div >
               <h1>{resort}</h1>
               <br/>
@@ -37,6 +38,7 @@ const SkiAreaDropdown = (props) => {
               <br/>
             </div>
         </Dropdown>
+        </div>
         )
 }
 

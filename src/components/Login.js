@@ -51,7 +51,7 @@ function Login() {
                     <button>Login</button>
                     
                 </form>
-            <h4 style={{color: "red"}}>{error.statusText}</h4>
+            <h6 style={{color: "red"}}>{error.statusText}</h6>
         <br/>
             <h4>OR</h4>
         <br/>
