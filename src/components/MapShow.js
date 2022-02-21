@@ -1,7 +1,6 @@
 import GoogleKey from "../GoogleKey"
 
 const MapShow = (resort) => {
-    console.log("mapshow", resort.resort)
     const location = resort.resort
 
     if(location.length < 1)

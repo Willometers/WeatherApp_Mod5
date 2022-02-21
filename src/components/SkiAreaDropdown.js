@@ -4,22 +4,19 @@ import { useDispatch } from 'react-redux'
 import { fetchAreaWeather } from '../store/actions/letsSkiActions'
 import { useState } from 'react'
 
+
 const SkiAreaDropdown = (props) => {
 
     const skiAreas = useSelector(state => state.skiAreas[0])
     const dispatch = useDispatch()
     const [resort, setResort ] = useState([])
-    const weather = useSelector(state => state)
-    props.setTheResort(resort)
 
       const handleSelect = (e) => {
-        // e.preventDefault()
-        // dispatches ski resorts zip code to search action
         dispatch(fetchAreaWeather(e.target.id))
         setResort(e.target.innerHTML)
-        console.log("ski area zip", e.target.id)
-        console.log("droppy", weather)
       }
+        props.setTheResort(resort)
+
     
     if (!skiAreas)
         return(

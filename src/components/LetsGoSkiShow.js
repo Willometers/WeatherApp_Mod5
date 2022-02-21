@@ -3,17 +3,9 @@ import moment from 'moment';
 import React from 'react';
 import {CardGroup, Card} from 'react-bootstrap'
 
-function LetsGoSkiShow() {
+function LetsGoSkiShow(resort) {
     const weather = useSelector(state => state.letsSki[0])
-    console.log("LGSShow", weather)
 
-    if (weather === undefined || null)
-        return (
-            <div>
-                <h2 style={{color:'red'}}>Please select a ski area</h2>
-            </div>
-        );
-    else
         return (
             <div>
             <CardGroup>

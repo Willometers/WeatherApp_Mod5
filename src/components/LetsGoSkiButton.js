@@ -7,6 +7,8 @@ function LetsGoSkiButton() {
         e.preventDefault()
         console.log("lets ski", e.target)
         navigate("/goski")
+        window.location.reload(false);
+
     }
 
         return (
