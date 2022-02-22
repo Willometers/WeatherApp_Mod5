@@ -10,6 +10,7 @@ import Login from './components/Login'
 import "./App.css";
 import { addUser } from '../src/store/actions/locationsActions.js'
 import { fetchSkiAreas } from '../src/store/actions/skiAreasActions.js'
+import { fetchUsers } from '../src/store/actions/allUsersActions.js'
 import MySavedLocationsShow from './components/MySavedLocationsShow'
 import ErrorShow from './components/ErrorShow'
 import LetsGoSkiContainer from './containers/LetsGoSkiContainer'
@@ -37,8 +38,11 @@ function App() {
 
   useEffect(() => { 
     dispatch(fetchSkiAreas())
-  }, []
-  )
+    }, [] )
+
+  useEffect(() => { 
+    dispatch(fetchUsers())
+    }, [] )
 
   return (
     <Router>
