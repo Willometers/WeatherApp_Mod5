@@ -1,9 +1,8 @@
-import { Dropdown, DropdownButton } from 'react-bootstrap'
+import { Dropdown } from 'react-bootstrap'
 import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
 import { fetchAreaWeather } from '../store/actions/letsSkiActions'
 import { useState } from 'react'
-
 
 const SkiAreaDropdown = (props) => {
 
@@ -11,14 +10,17 @@ const SkiAreaDropdown = (props) => {
     const dispatch = useDispatch()
     const [resort, setResort ] = useState([])
 
-      const handleSelect = (e) => {
-        dispatch(fetchAreaWeather(e.target.id))
-        setResort(e.target.innerHTML)
-      }
-        props.setTheResort(resort)
+      const handleSelect = (area) => {
 
-    
-    if (!skiAreas)
+        dispatch(fetchAreaWeather(area.location))
+        setResort(area)
+        console.log("dispatch ski", area)
+      }
+
+      props.setTheResort(resort)
+      console.log("resort dropdown", resort)
+
+      if (!skiAreas)
         return(
             <div></div>
         )
@@ -27,11 +29,16 @@ const SkiAreaDropdown = (props) => {
           <div >
         <Dropdown  >
             <div >
-              <h1>{resort}</h1>
+              <h1>{resort.name}</h1>
               <br/>
-              <DropdownButton   id="dropdown-basic-button" title="New York Ski Areas">
-                      {skiAreas.map((area) => <Dropdown.Item id={area.location} key={area.id} onClick={handleSelect}> {area.name} </Dropdown.Item >)}
-              </DropdownButton>
+              <Dropdown.Toggle variant="success">NY Ski Areas</Dropdown.Toggle>
+              <Dropdown.Menu id="dropdown-basic-button" title="New York Ski Areas">
+                        {skiAreas.map((area) => <Dropdown.Item 
+                        key={area.id} 
+                        onClick={() => handleSelect(area)}
+                        >{area.name}
+                      </Dropdown.Item >)}
+              </Dropdown.Menu>
               <br/>
             </div>
         </Dropdown>

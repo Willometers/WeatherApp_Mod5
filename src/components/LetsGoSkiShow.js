@@ -6,6 +6,13 @@ import {CardGroup, Card} from 'react-bootstrap'
 function LetsGoSkiShow(resort) {
     const weather = useSelector(state => state.letsSki[0])
 
+    if (weather.forecast === undefined)
+        return (
+            <div>
+                <h4>LOADING</h4>
+            </div>
+            );
+    else
         return (
             <div>
             <CardGroup>

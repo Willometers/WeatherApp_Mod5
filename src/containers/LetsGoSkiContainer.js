@@ -7,14 +7,17 @@ import { useSelector } from "react-redux"
 
 const LetsGoSkiContainer = () => {
     const weather = useSelector(state => state.letsSki[0])
+    const user_info = useSelector(state => state.location)
     const [resort, setResort ] = useState([])
-    
+
     const setTheResort = (skiArea) => {
         setResort(skiArea)
     }
 
-    if (weather === undefined)
-        return (
+    console.log("container", resort)
+
+    if (!weather)
+        return ( 
             <div>
                 <SkiAreaDropdown setTheResort={setTheResort} />
                 <h4>Please Select a Ski Area</h4>
@@ -23,8 +26,8 @@ const LetsGoSkiContainer = () => {
     else
         return (
             <div>
-            <SkiAreaDropdown setTheResort={setTheResort} />
-            <RateComponent resort={resort}/>
+            <SkiAreaDropdown setTheResort={setTheResort}/>
+            {user_info[0].error ? null : <RateComponent resort={resort}/>}
                 <div style={{display: "grid", gridTemplateColumns: "1fr 1fr"}}>
                 <LetsGoSkiShow resort={resort}/>
                 <MapShow resort={resort}/>
@@ -32,6 +35,5 @@ const LetsGoSkiContainer = () => {
             </div>
         );
 }
-
 
 export default LetsGoSkiContainer
