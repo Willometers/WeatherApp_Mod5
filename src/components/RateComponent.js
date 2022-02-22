@@ -15,8 +15,6 @@ const RateComponent = (resort) => {
         setRating(e)
     }
 
-    console.log("ski area", resort)
-
     const handleSubmit = (e) => {
         let user = user_info[0].id
         let ski_area_id = resort.resort.id
@@ -46,11 +44,8 @@ const RateComponent = (resort) => {
 }
 
     const handleChange = (e) => {
-        console.log(e.target.value)
         setReview(e.target.value)
     }
-
-    console.log("rating:", resort.resort)
 
     return (
         <div>

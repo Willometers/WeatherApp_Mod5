@@ -14,11 +14,11 @@ const SkiAreaDropdown = (props) => {
 
         dispatch(fetchAreaWeather(area.location))
         setResort(area)
-        console.log("dispatch ski", area)
+        // console.log("dispatch ski", area)
       }
 
       props.setTheResort(resort)
-      console.log("resort dropdown", resort)
+      // console.log("resort dropdown", resort)
 
       if (!skiAreas)
         return(

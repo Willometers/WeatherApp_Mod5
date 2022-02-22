@@ -4,6 +4,7 @@ import MapShow from "../components/MapShow"
 import { useState } from 'react'
 import RateComponent from '../components/RateComponent'
 import { useSelector } from "react-redux"
+import ReviewsContainer from "./ReviewsContainer"
 
 const LetsGoSkiContainer = () => {
     const weather = useSelector(state => state.letsSki[0])
@@ -14,7 +15,7 @@ const LetsGoSkiContainer = () => {
         setResort(skiArea)
     }
 
-    console.log("container", resort)
+    // console.log("container", resort)
 
     if (!weather)
         return ( 
@@ -30,8 +31,9 @@ const LetsGoSkiContainer = () => {
             {user_info[0].error ? null : <RateComponent resort={resort}/>}
                 <div style={{display: "grid", gridTemplateColumns: "1fr 1fr"}}>
                 <LetsGoSkiShow resort={resort}/>
-                <MapShow resort={resort}/>
+                <MapShow resort={resort.name}/>
                 </div>
+            <ReviewsContainer id={resort.id}/>
             </div>
         );
 }
