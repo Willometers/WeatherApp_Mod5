@@ -15,10 +15,6 @@ const RateComponent = (resort) => {
     const handleRating = (e) => {
         setRating(e)
     }
-//  move RevContainer so that rerender will trigger? 
-// make sure props move too i.e. 
-//  setResort(skiArea) = dropdown selection
-//  resort = resort id?
 
     const handleSubmit = (e) => {
         let user = user_info[0].id
