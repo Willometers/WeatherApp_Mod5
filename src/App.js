@@ -35,6 +35,7 @@ function App() {
       },
     );
   })
+  // BUG: rerender happening when going from saved locations to clicked on show... renders back to found location
 
   useEffect(() => { 
     dispatch(fetchSkiAreas())
@@ -47,6 +48,7 @@ function App() {
   return (
     <Router>
       <div className="App">
+        <ErrorShow/>
         <NavBar />
         <br/>
           <Routes>

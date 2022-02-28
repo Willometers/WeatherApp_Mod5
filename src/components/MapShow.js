@@ -3,7 +3,7 @@ import GoogleKey from "../GoogleKey"
 const MapShow = (resort) => {
     const location = resort.resort
 
-    if(location.length < 1)
+    if(!resort.resort)
         return(
             <div></div>
             )

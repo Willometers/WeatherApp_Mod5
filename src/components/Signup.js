@@ -61,9 +61,9 @@ function Signup() {
             <form onSubmit={handleSubmit} >
                 <input placeholder="Email" 
                     onChange={handleEmail}/>
-                <input placeholder="Password" 
+                <input type="password" placeholder="Password" 
                     onChange={handlePassword}/>
-                <input placeholder="Password Confirmation" 
+                <input type="password" placeholder="Password Confirmation" 
                     onChange={handlePasswordConfirmation}/>
                 <button>Signup</button>
             </form>

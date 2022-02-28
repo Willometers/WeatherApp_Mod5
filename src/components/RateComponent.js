@@ -3,6 +3,7 @@ import { Rating } from 'react-simple-star-rating'
 import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
 import { addErrors } from "../store/actions/weatherActions"
+import ReviewsContainer from '../containers/ReviewsContainer'
 
 const RateComponent = (resort) => {
 
@@ -14,6 +15,10 @@ const RateComponent = (resort) => {
     const handleRating = (e) => {
         setRating(e)
     }
+//  move RevContainer so that rerender will trigger? 
+// make sure props move too i.e. 
+//  setResort(skiArea) = dropdown selection
+//  resort = resort id?
 
     const handleSubmit = (e) => {
         let user = user_info[0].id
@@ -21,6 +26,7 @@ const RateComponent = (resort) => {
         let stars = rating
         let comments = review
         e.preventDefault()
+        e.target.reset()
         fetch("savereview", {
             method: 'POST',
             headers: {
@@ -64,11 +70,10 @@ const RateComponent = (resort) => {
                 className='foo' // Will remove the inline style if applied
                 />
                 <br/>
-                <br/>
             <button >Submit</button>
             </form >
                 <br/>
-                <br/>
+                <ReviewsContainer id={resort.resort.id}/>
             </div>
     )
 }

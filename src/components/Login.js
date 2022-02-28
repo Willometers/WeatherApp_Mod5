@@ -46,7 +46,7 @@ function Login() {
                 <form onSubmit={handleSubmit} >
                     <input placeholder="Email" 
                         onChange={handleEmail}/>
-                    <input placeholder="Password" 
+                    <input type="password" placeholder="Password" 
                         onChange={handlePassword}/>
                     <button>Login</button>
                     

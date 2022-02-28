@@ -10,17 +10,14 @@ const SkiAreaDropdown = (props) => {
     const dispatch = useDispatch()
     const [resort, setResort ] = useState([])
 
-      const handleSelect = (area) => {
+    const handleSelect = (area) => {
+      dispatch(fetchAreaWeather(area.location))
+      setResort(area)
+    }
 
-        dispatch(fetchAreaWeather(area.location))
-        setResort(area)
-        // console.log("dispatch ski", area)
-      }
+    props.setTheResort(resort)
 
-      props.setTheResort(resort)
-      // console.log("resort dropdown", resort)
-
-      if (!skiAreas)
+    if (!skiAreas)
         return(
             <div></div>
         )
