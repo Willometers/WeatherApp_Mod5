@@ -3,12 +3,15 @@ import { useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
 import { useDispatch } from "react-redux"
 import { addErrors } from "../store/actions/weatherActions"
+import { useEffect } from "react"
+import { addUser } from "../store/actions/locationsActions"
 
 const LogoutButton = () => {
 
 const user_info = useSelector(state => state.location)
 const navigate = useNavigate()
 const dispatch = useDispatch()
+console.log("logout user_info", user_info[0])
 
 const handleSubmit = (e) => {
     e.preventDefault()
@@ -21,14 +24,22 @@ const handleSubmit = (e) => {
       }).then((res) => {
         if (res.ok) {
             res.json().then(navigate("/"))
-            window.location.reload(false);
+            console.log("log out button")
         } else {
             res.json().then((res) => dispatch(addErrors(res)))
             console.log("error", res.status, res.statusText)
-            window.location.reload(false);
         }
     })
 }
+
+useEffect(() => { 
+    fetch("me")
+    .then((res) => res.json())
+    .then((res) => dispatch(addUser(res)))
+    .then((res) => console.log("user", res))
+    }, []
+  )
+
 
     if(user_info[0])
         if(!user_info[0].error)
@@ -48,6 +59,7 @@ const handleSubmit = (e) => {
         return (
             <div></div>
         )
+// no superfluous return
 }
 
 export default LogoutButton

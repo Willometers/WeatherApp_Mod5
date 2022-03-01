@@ -3,18 +3,27 @@ import { useSelector } from 'react-redux'
 import moment from 'moment';
 import React from 'react';
 import SaveButton from './SaveButton'
+import NavBar from '../containers/NavBar';
+import ErrorShow from './ErrorShow';
 
 function Show() {
     const weather = useSelector(state => state.weather[0])
 
     if (weather === undefined || null)
         return (
+            <div>
+                <ErrorShow/>
+                <NavBar />
             <div class="spinner-border text-primary" role="status">
                 <span class="sr-only">Loading...</span>
+            </div>
             </div>
         );
     else
         return (
+            <div>
+            <ErrorShow/>
+            <NavBar />
             <div style={{display: 'flex', justifyContent: 'center'}} className="w-100 p-3 center" >
             <Card border="secondary" className="w-50 h-25">
                 <Card.Text>
@@ -34,6 +43,7 @@ function Show() {
                 </Card.Text>
                 <SaveButton />
             </Card>
+            </div>
             </div>
         );
 }

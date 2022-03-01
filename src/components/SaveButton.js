@@ -30,7 +30,6 @@ const SaveButton = () => {
                 if (res.ok) {
                     res.json()
                     console.log("location saved", res)
-                    window.location.reload(false);
                 } else {
                     res.json().then((res) => dispatch(addErrors(res)))
                     console.log("error", res.status, res.statusText)

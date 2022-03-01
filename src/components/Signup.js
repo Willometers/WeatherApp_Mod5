@@ -43,7 +43,6 @@ function Signup() {
                 if (res.ok) {
                     res.json().then(navigate("/"))
                     console.log("signed up", res)
-                    window.location.reload(false);
                 } else {
                     res.json().then((res) => dispatch(addErrors(res)))
                     console.log("error", res.status, res.statusText)
@@ -69,6 +68,7 @@ function Signup() {
             </form>
             {password === passwordConfirmation ? <h8></h8> : <h8 style={{color: "red"}} >Passwords Must Match</h8>}
             <h6 style={{color: "red"}}>{error.statusText}</h6>
+{/* render out readable info */}
             </div>
         )  
 }

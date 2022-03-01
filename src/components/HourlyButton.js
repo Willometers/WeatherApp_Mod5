@@ -5,7 +5,6 @@ function HourlyButton() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log("hourly")
         navigate("/hourly")
     }
 

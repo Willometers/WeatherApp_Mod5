@@ -5,7 +5,6 @@ function HomeButton() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log('Home')
         navigate("/")
     }
 

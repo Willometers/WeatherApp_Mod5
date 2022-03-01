@@ -15,11 +15,9 @@ function SearchBar() {
     
     function handleSubmit(e) {
         e.preventDefault()
-        console.log("submitted", place)
         dispatch(fetchSearchWeather(place))
         e.target.reset()
         navigate("/")
-        // window.location.reload(false);
     }
 
     return (

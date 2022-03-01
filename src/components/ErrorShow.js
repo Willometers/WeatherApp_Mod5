@@ -5,7 +5,6 @@ import { useSelector } from "react-redux"
         const state = useSelector(state => state.weather)
         // console.log("errorshow", state[1].error.message)
 
-        if(state.length > 1)
             if(state[1])
             return (
                 <div>
@@ -16,13 +15,12 @@ import { useSelector } from "react-redux"
                 )
             else
             return(
-                <div><h1>big error</h1></div>
-            )
-        else
-            return (
                 <div>
+
                 </div>
             )
+
+// no superfluous return
     }  
 
     export default ErrorShow

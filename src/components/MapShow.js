@@ -7,6 +7,7 @@ const MapShow = (resort) => {
         return(
             <div></div>
             )
+// no superfluous return
     else
         return (
             <div className="map">

@@ -1,6 +1,8 @@
 import { useSelector } from 'react-redux'
 import moment from 'moment';
 import {CardGroup, Card} from 'react-bootstrap'
+import NavBar from '../containers/NavBar';
+import ErrorShow from './ErrorShow';
 
 function ForecastShow() {
     const weather = useSelector(state => state.weather[0])
@@ -8,12 +10,19 @@ function ForecastShow() {
   
     if (weather === undefined)
         return (
+            <div>
+                <ErrorShow/>
+                <NavBar />
             <div class="spinner-border text-primary" role="status">
                 <span class="sr-only">Loading...</span>
+            </div>
             </div>
         );
     else
         return (
+            <div>
+            <ErrorShow/>
+            <NavBar />
             <div>
                 <h1>{weather.location.name}, {weather.location.region}</h1>
                 <h3>{weather.location.country}</h3>
@@ -36,6 +45,7 @@ function ForecastShow() {
                 ))}
                 </CardGroup>
                  <br/>
+            </div>
             </div>
         );
 }

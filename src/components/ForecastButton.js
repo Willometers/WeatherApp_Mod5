@@ -5,7 +5,6 @@ function ForecastButton() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log("forecast")
         navigate("/forecast")
     }
 

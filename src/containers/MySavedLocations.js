@@ -10,7 +10,6 @@ function MySavedLocations() {
     const handleClick = (e) => {
         console.log("clicked", user)
         navigate("/saved");
-        window.location.reload(false);
     }
     const handleLogin = (e) => {
         console.log("login", user)
@@ -22,12 +21,6 @@ function MySavedLocations() {
                 return (
                 <div>
                     <button onClick={handleClick} value={user.id}> {user.email} </button>
-                </div>
-                )
-            else if(user.error)
-                return (
-                <div>
-                    <button onClick={handleLogin}> Login/Signup </button>
                 </div>
                 )
             else

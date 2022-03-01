@@ -1,10 +1,9 @@
 import { BrowserRouter as Router, Routes,Route } from 'react-router-dom'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import Show from './components/Show'
 import { fetchCurrentWeather } from './store/actions/weatherActions'
 import ForecastShow from './components/ForecastShow'
-import NavBar from './containers/NavBar'
 import HourlyContainer from './containers/HourlyContainer'
 import Login from './components/Login'
 import "./App.css";
@@ -16,14 +15,17 @@ import ErrorShow from './components/ErrorShow'
 import LetsGoSkiContainer from './containers/LetsGoSkiContainer'
 
 function App() {
+
   const dispatch = useDispatch()
 
   useEffect(() => { 
     fetch("me")
     .then((res) => res.json())
     .then((res) => dispatch(addUser(res)))
+    .then((res) => console.log("user", res))
     }, []
   )
+// i need this to be my state-updater
 
   useEffect(() => {
      navigator.geolocation.getCurrentPosition(
@@ -35,7 +37,6 @@ function App() {
       },
     );
   })
-  // BUG: rerender happening when going from saved locations to clicked on show... renders back to found location
 
   useEffect(() => { 
     dispatch(fetchSkiAreas())
@@ -48,8 +49,6 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <ErrorShow/>
-        <NavBar />
         <br/>
           <Routes>
           <Route 

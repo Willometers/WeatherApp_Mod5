@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch } from "react-redux"
 import { addErrors } from "../store/actions/weatherActions"
 import Signup from "./Signup";
+import NavBar from "../containers/NavBar";
+import ErrorShow from "./ErrorShow";
 
 function Login() {
     const [email, setEmail ] = useState("")
@@ -20,7 +22,6 @@ function Login() {
 
     function handleSubmit(e) {
         e.preventDefault()
-        console.log("login")
         fetch("login", {
             method: 'POST', 
             headers: {
@@ -32,16 +33,19 @@ function Login() {
             if (res.ok) {
               res.json().then((user) => console.log(user));
               navigate("/")
-              window.location.reload(false);
             } else {
                 res.json().then((res) => dispatch(addErrors(res)))
                 console.log("login error", res.status, res.statusText)
                 setError(res)
+// check error handling
             }
           }) 
     }
 
     return (
+        <div>
+        <ErrorShow/>
+        <NavBar />
         <div >
                 <form onSubmit={handleSubmit} >
                     <input placeholder="Email" 
@@ -57,6 +61,7 @@ function Login() {
         <br/>
             < Signup />
     </div>
+     </div>
     )
 }
 

@@ -22,6 +22,7 @@ const DeleteFavoriteButton = (place) => {
                 } else {
                     res.json().then((res) => dispatch(addErrors(res)))
                     console.log("error", res.status, res.statusText, res)
+// check error message
                 }
             })
     }

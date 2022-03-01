@@ -5,9 +5,7 @@ function LetsGoSkiButton() {
     const navigate = useNavigate()
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log("lets ski", e.target)
         navigate("/goski")
-        window.location.reload(false);
     }
 
         return (

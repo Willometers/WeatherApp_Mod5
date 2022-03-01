@@ -37,10 +37,10 @@ const RateComponent = (resort) => {
         }).then((res) => {
             if (res.ok) {
                 res.json()
-                console.log("review saved", res)
             } else {
                 res.json().then((res) => dispatch(addErrors(res)))
                 console.log("error", res.status, res.statusText)
+// check error handling
         }
         })
 }
@@ -48,7 +48,7 @@ const RateComponent = (resort) => {
     const handleChange = (e) => {
         setReview(e.target.value)
     }
-
+// add required field/ error message 
     return (
         <div>
             <form onSubmit={handleSubmit}>

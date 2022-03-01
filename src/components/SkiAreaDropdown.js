@@ -21,6 +21,7 @@ const SkiAreaDropdown = (props) => {
         return(
             <div></div>
         )
+// no superfluous return
     else
         return (
           <div >
