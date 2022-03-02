@@ -35,7 +35,6 @@ useEffect(() => {
     fetch("me")
     .then((res) => res.json())
     .then((res) => dispatch(addUser(res)))
-    .then((res) => console.log("user", res))
     }, []
   )
 
