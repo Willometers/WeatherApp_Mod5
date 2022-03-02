@@ -54,7 +54,7 @@ function Signup() {
             console.log(errorMessage)
         }
     }
-
+console.log("error",error)
         return (
             <div >
             <form onSubmit={handleSubmit} >
@@ -67,8 +67,7 @@ function Signup() {
                 <button>Signup</button>
             </form>
             {password === passwordConfirmation ? <h8></h8> : <h8 style={{color: "red"}} >Passwords Must Match</h8>}
-            <h6 style={{color: "red"}}>{error.statusText}</h6>
-{/* render out readable info */}
+            <div> {error.statusText ? <h6 style={{color: "red"}}>User Already Exists</h6> : <h1></h1>}</div>
             </div>
         )  
 }

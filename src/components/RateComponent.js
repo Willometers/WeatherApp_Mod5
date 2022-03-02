@@ -49,6 +49,8 @@ const RateComponent = (resort) => {
         setReview(e.target.value)
     }
 // add required field/ error message 
+// gray out element until a resort is selected
+console.log("rate comp", resort)
     return (
         <div>
             <form onSubmit={handleSubmit}>

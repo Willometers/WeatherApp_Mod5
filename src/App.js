@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes,Route } from 'react-router-dom'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import Show from './components/Show'
 import { fetchCurrentWeather } from './store/actions/weatherActions'
