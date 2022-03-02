@@ -7,7 +7,7 @@ import NavBar from './NavBar';
 function HourlyContainers() {
     const weather = useSelector(state => state.weather[0])
 
-    if (weather != undefined)
+    if (weather !== undefined)
         return (
             <div>
                 <ErrorShow/>

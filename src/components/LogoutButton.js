@@ -11,7 +11,6 @@ const LogoutButton = () => {
 const user_info = useSelector(state => state.location)
 const navigate = useNavigate()
 const dispatch = useDispatch()
-console.log("logout user_info", user_info[0])
 
 const handleSubmit = (e) => {
     e.preventDefault()
@@ -40,7 +39,6 @@ useEffect(() => {
     }, []
   )
 
-
     if(user_info[0])
         if(!user_info[0].error)
         return (
@@ -53,11 +51,11 @@ useEffect(() => {
             );
             else
             return (
-                <div></div>
+                <div>dfgn</div>
             )
         else 
         return (
-            <div></div>
+            <div>dgfn</div>
         )
 // no superfluous return
 }

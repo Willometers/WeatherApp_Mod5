@@ -7,14 +7,22 @@ import { useSelector } from "react-redux"
 import NavBar from "./NavBar"
 
 const LetsGoSkiContainer = () => {
-    const weather = useSelector(state => state.letsSki[0])
     const user_info = useSelector(state => state.location)
     const [resort, setResort ] = useState([])
+    console.log("LG container", user_info[0])
 
     const setTheResort = (skiArea) => {
         setResort(skiArea)
     }
 
+    if (resort === undefined)
+        return (
+            <div>
+                <NavBar />
+                <h4 style={{color:'red'}} >Data Not Found</h4>
+            </div>
+        )
+    else
         return (
             <div>
                 <NavBar />
@@ -23,10 +31,10 @@ const LetsGoSkiContainer = () => {
                 <br/>
                 <div style={{display: "grid", gridTemplateColumns: "1fr 1fr"}}>
                 <LetsGoSkiShow resort={resort}/>
-                <MapShow resort={resort.name}/>
+                {resort.name ? <MapShow resort={resort.name}/> : null }
                 </div>
                 <br/>
-                {user_info[0].error ? <h4 class="card border-success mb-3" border="secondary">Log In or Sign Up to see/post reviews</h4> : <RateComponent resort={resort}/>}
+                <RateComponent resort={resort}/>
                 </div>
             </div>
         );

@@ -67,7 +67,7 @@ console.log("error",error)
                 <button>Signup</button>
             </form>
             {password === passwordConfirmation ? <h8></h8> : <h8 style={{color: "red"}} >Passwords Must Match</h8>}
-            <div> {error.statusText ? <h6 style={{color: "red"}}>User Already Exists</h6> : <h1></h1>}</div>
+            <div> {error.statusText ? <h6 style={{color: "red"}}>User Already Exists</h6> : null }</div>
             </div>
         )  
 }

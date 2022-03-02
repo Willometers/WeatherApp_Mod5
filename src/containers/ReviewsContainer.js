@@ -1,24 +1,15 @@
-import { useSelector } from "react-redux"
 import ReviewShow from "../components/ReviewsShow"
 
-const ReviewsContainer = (id) => {
+const ReviewsContainer = (resort) => {
 
-// pass in actual reviews
-    
-    const skiAreas = useSelector(state => state.skiAreas[0])
-    const place = skiAreas.filter((x) => x.id === id.id)
-
-    if(!place[0])
+    if(resort.resort.length < 1)
         return (
-            <div></div>
+            <div>Be the First to Leave a Review</div>
         )
-
-// no superfluous return
-
     else
         return(
             <div>
-                {place[0].reviews.map((review) =>  
+                {resort.resort.reviews.map((review) =>  
                     <ReviewShow review={review}/>)}
             </div>
         )

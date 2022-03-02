@@ -3,22 +3,20 @@ import moment from 'moment';
 import React from 'react';
 import {CardGroup, Card} from 'react-bootstrap'
 
-function LetsGoSkiShow(resort) {
-    const weather = useSelector(state => state.letsSki[0])
-    console.log("ski show", resort, weather)
 
-    if (resort.resort.length === 0)
-        return (
-            <div justify="center">
-                <h4 >Please Select a Ski Area</h4>
-            </div>
-            );
-    else
-        if (weather.forecast )
-                return (
-                <div>
-                <CardGroup>
-                {weather.forecast.forecastday.map((day) => (
+const LetsGoSkiShow = (resort) => {
+    const weather = useSelector(state => state.letsSki[0])
+    console.log("LG Show", weather, resort)
+
+        if (weather === undefined || resort.resort.length < 1)
+            return (
+                <div><h4>Please Select a Ski Area</h4></div>
+            )
+        else
+            return (
+            <div>
+            <CardGroup>
+            {weather.forecast.forecastday.map((day) => (
                     <Card border="secondary" >
                     <Card.Img src={day.day.condition.icon} alt={day.day.condition.text} />
                         <Card.Title>{moment(day.date).format("dddd")}, {moment(day.date).format('LL')}</Card.Title>
@@ -29,17 +27,10 @@ function LetsGoSkiShow(resort) {
                         <Card.Text>Sunrise: {day.astro.sunrise}</Card.Text>
                         <Card.Text>Sunset: {day.astro.sunset}</Card.Text>
                     </Card>  
-                ))}
-                </CardGroup>
-                </div>
-                )
-        else
-                return (
-                    <div><h4 style={{color:'red'}} >Weather Not Loaded</h4></div>
-                    )
-    
-
-
+                    ))}
+            </CardGroup>
+            </div>
+            )
 }
 
 export default LetsGoSkiShow

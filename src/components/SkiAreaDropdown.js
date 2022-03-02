@@ -20,10 +20,9 @@ const SkiAreaDropdown = (props) => {
     if (!skiAreas)
         return(
             <div>
-              <h1>No Ski Areas Loaded</h1>
+              <div><h4 style={{color:'red'}}>No Ski Areas Loaded</h4></div>
             </div>
         )
-// no superfluous return
     else
         return (
           <div >

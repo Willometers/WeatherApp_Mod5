@@ -6,7 +6,6 @@ const ReviewShow = (review) => {
     const allUsers = useSelector(state => state.allUsers[0])
     const user = allUsers.filter((x) => x.id === review.review.user_id)
     const stars = review.review.rating*.1/2
-    console.log("starts", stars)
 
     return (
         <div style={{display: 'flex',  justifyContent:'center', alignItems:'center', height: ''}}>

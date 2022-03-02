@@ -40,7 +40,6 @@ const RateComponent = (resort) => {
             } else {
                 res.json().then((res) => dispatch(addErrors(res)))
                 console.log("error", res.status, res.statusText)
-// check error handling
         }
         })
 }
@@ -50,7 +49,6 @@ const RateComponent = (resort) => {
     }
 // add required field/ error message 
 // gray out element until a resort is selected
-console.log("rate comp", resort)
     return (
         <div>
             <form onSubmit={handleSubmit}>
@@ -71,7 +69,7 @@ console.log("rate comp", resort)
             <button >Submit</button>
             </form >
                 <br/>
-                <ReviewsContainer id={resort.resort.id}/>
+                <ReviewsContainer resort={resort.resort}/>
             </div>
     )
 }
