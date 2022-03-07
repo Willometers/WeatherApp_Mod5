@@ -51,6 +51,8 @@ const SaveButton = () => {
                     return (
                         <div>
                          <button disabled >Save</button>
+                         <p>Log In or Sign Up to Save Location</p>
+
                         </div>
                       
                     )
