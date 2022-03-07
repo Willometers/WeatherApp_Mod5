@@ -24,11 +24,11 @@ const LogoutButton = () => {
             body: JSON.stringify({user_id : user_info[0].id})
         }).then((res) => {
             if (res.ok) {
-                res.json().then(navigate("/"))
-                .then((res) => console.log("loggedout", res))
+                (navigate("/"))
+                console.log("loggedout")
             } else {
                 res.json().then((res) => dispatch(addErrors(res)))
-                console.log("error", res.status, res.statusText)
+                console.log("error logout", res.status, res.statusText)
             }
         })
     }

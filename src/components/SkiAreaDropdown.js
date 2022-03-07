@@ -9,6 +9,7 @@ const SkiAreaDropdown = (props) => {
     const skiAreas = useSelector(state => state.skiAreas[0])
     const dispatch = useDispatch()
     const [resort, setResort ] = useState([])
+  
 
     const handleSelect = (area) => {
       dispatch(fetchAreaWeather(area.location))
@@ -33,10 +34,10 @@ const SkiAreaDropdown = (props) => {
               <Dropdown.Toggle variant="success">NY Ski Areas</Dropdown.Toggle>
               <Dropdown.Menu id="dropdown-basic-button" title="New York Ski Areas">
                         {skiAreas.map((area) => <Dropdown.Item 
-                        key={area.id} 
-                        onClick={() => handleSelect(area)}
-                        >{area.name}
-                      </Dropdown.Item >)}
+                          key={area.id} 
+                          onClick={() => handleSelect(area)}
+                          >{area.name}
+                        </Dropdown.Item >)}
               </Dropdown.Menu>
               <br/>
             </div>
