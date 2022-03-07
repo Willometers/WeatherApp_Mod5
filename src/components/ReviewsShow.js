@@ -2,8 +2,8 @@ import { useSelector } from "react-redux"
 import { Rating } from '@mui/material';
 
 const ReviewShow = (review) => {
-// pass down user from parent
 
+    console.log("reviews", review)
     const stars = review.review.rating*.1/2
 
     return (
