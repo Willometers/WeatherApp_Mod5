@@ -45,7 +45,7 @@ function Signup() {
                     console.log("signed up", res)
                 } else {
                     res.json().then((res) => dispatch(addErrors(res)))
-                    console.log("error", res.status, res.statusText)
+                    console.log("errors", res.status, res.statusText)
                     setError(res)
                 }
             }) 
@@ -67,7 +67,7 @@ console.log("error",error)
                 <button>Signup</button>
             </form>
             {password === passwordConfirmation ? <h8></h8> : <h8 style={{color: "red"}} >Passwords Must Match</h8>}
-            <div> {error.statusText ? <h6 style={{color: "red"}}>User Already Exists</h6> : null }</div>
+            <div> {error.statusText ? <h6 style={{color: "red"}}>User Already Exists or Invalid Email</h6> : null }</div>
             </div>
         )  
 }

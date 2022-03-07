@@ -4,8 +4,6 @@ import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
 import { addErrors } from "../store/actions/weatherActions"
 import ReviewsContainer from '../containers/ReviewsContainer'
-import { useEffect } from 'react'
-import { addUser } from '../store/actions/locationsActions'
 
 const RateComponent = (resort) => {
 
@@ -49,9 +47,7 @@ const RateComponent = (resort) => {
     const handleChange = (e) => {
         setReview(e.target.value)
     }
-// add required field/ error message 
-// gray out element until a resort is selected
-console.log("rateComp", user_info[0])
+
     return (
         <div>
             <form onSubmit={handleSubmit}>
@@ -70,7 +66,7 @@ console.log("rateComp", user_info[0])
                 />
                 <br/>
                 <br/>
-            {user_info[0].error ? <div><h8>Log in or Sign up to Leave Review</h8><br/><button disabled >Submit</button></div>: <button>Submit</button>  }
+            {user_info[0].error ? <div><h8>Log in or Sign up to Leave Review</h8><br/><br/><button disabled >Submit</button></div> : <button>Submit</button>  }
             </form >
                 <br/>
                 <ReviewsContainer resort={resort.resort}/>

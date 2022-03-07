@@ -10,6 +10,7 @@ const LetsGoSkiContainer = () => {
     const user_info = useSelector(state => state.location)
     const [resort, setResort ] = useState([])
     console.log("LG container", resort.length)
+    console.log("LG container", user_info[0])
 
     const setTheResort = (skiArea) => {
         setResort(skiArea)
@@ -34,7 +35,7 @@ const LetsGoSkiContainer = () => {
                 {resort.name ? <MapShow resort={resort.name}/> : null }
                 </div>
                 <br/>
-                {resort.length < 1 ? <h8>Log in or Sign up to Leave Review</h8> : <RateComponent resort={resort}/>}
+                {resort.length < 1 ? null : <RateComponent resort={resort}/>}
                 </div>
             </div>
         );

@@ -8,7 +8,7 @@ import { Navbar, Nav, Container } from 'react-bootstrap'
 import LetsGoSkiContainer from '../components/LetsGoSkiButton.js'
 
 function NavBar() {
-  
+
   return (
     <div style={{display: 'flex', justifyContent: 'center'}}>
         <Navbar bg="light" expand="lg" sticky="top" >

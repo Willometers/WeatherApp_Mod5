@@ -54,9 +54,9 @@ function Login() {
                 </form>
                 <div> {error.statusText ? <h6 style={{color: "red"}}>Email or Password Incorrect</h6> : <h1></h1>}</div>
         <br/>
-            <h4>OR</h4>
+        <h4>OR</h4>
         <br/>
-            < Signup />
+        < Signup />
     </div>
      </div>
     )

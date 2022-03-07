@@ -25,7 +25,8 @@ function App() {
     .then((res) => console.log("user", res))
     }, []
   )
-// i need this to be my state-updater
+  
+// i need this to be my state-updater/ re-render components on change
 
   useEffect(() => {
      navigator.geolocation.getCurrentPosition(

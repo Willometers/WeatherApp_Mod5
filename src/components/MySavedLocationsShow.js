@@ -17,39 +17,39 @@ const MySavedLocationsShow = () => {
         navigate("/")
     }
     
-if (user[0])
+if (user.length > 0)
         if (user[0].locations.length > 0)
             return (
                 <div>
-                <NavBar />
-                <div>
-                    {user[0].locations.map((place) => (
-                    <div style={{display: 'flex', justifyContent: 'center'}} className="w-100 p-3 center">
-                    <Card border="secondary" className="w-50 h-25">
-                        <Card.Text>
-                            <h1 id={place.location} onClick={handleClick}>{place.location}</h1>
-                        </Card.Text>
-                        <DeleteFavoriteButton place={place}/>
-                    </Card>
+                    <NavBar />
+                    <div>
+                        {user[0].locations.map((place) => (
+                        <div style={{display: 'flex', justifyContent: 'center'}} className="w-100 p-3 center">
+                        <Card border="secondary" className="w-50 h-25">
+                            <Card.Text>
+                                <h1 id={place.location} onClick={handleClick}>{place.location}</h1>
+                            </Card.Text>
+                            <DeleteFavoriteButton place={place}/>
+                        </Card>
+                        </div>
+                        ))}
                     </div>
-                    ))}
-                </div>
                 </div>
             )
         else
             return (
                 <div>
-                <NavBar />
-                <div><h1 style={{color:'red'}}>No Saved Locations</h1></div>
+                    <NavBar />
+                    <div><h1 style={{color:'red'}}>No Saved Locations</h1></div>
                 </div>
             )
     else 
     return (
         <div>
-        <NavBar />
-        <div class="spinner-border text-primary" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
+            <NavBar />
+            <div class="spinner-border text-primary" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
         </div>
     )
 
