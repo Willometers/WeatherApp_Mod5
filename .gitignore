@@ -24,3 +24,6 @@ yarn-error.log*
 
 src/APIKey.js
 src/GoogleKey.js
+
+# Local Netlify folder
+.netlify

@@ -1,4 +1,3 @@
-import { useSelector } from "react-redux"
 import { Rating } from '@mui/material';
 
 const ReviewShow = (review) => {
