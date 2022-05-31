@@ -1,3 +1,33 @@
+# README
+
+# SkiNY App
+
+## Table of Contents
+
+* [General Info](#general-info)
+* [Technologies](#technologies)
+* [Launch](#launch)
+* [Setup](#setup)
+
+
+## General Info
+
+## Technologies
+
+## Launch
+
+## Setup
+
+
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
