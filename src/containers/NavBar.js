@@ -6,6 +6,7 @@ import LogoutButton from "../components/LogoutButton"
 import MySavedLocations from "./MySavedLocations"
 import { Navbar, Nav, Container } from 'react-bootstrap'
 import LetsGoSkiContainer from '../components/LetsGoSkiButton.js'
+import SpotifyButton from '../components/SpotifyButton.js'
 
 function NavBar() {
 
@@ -23,6 +24,7 @@ function NavBar() {
               <LogoutButton/>
               <MySavedLocations/>
               <LetsGoSkiContainer/>
+              <SpotifyButton />
             </Nav>
           </Navbar.Collapse>
         </Container>
