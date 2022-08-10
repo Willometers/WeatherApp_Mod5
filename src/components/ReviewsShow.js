@@ -1,8 +1,17 @@
 import { Rating } from '@mui/material';
 
 const ReviewShow = (review) => {
+    
+    // const showUserID = () => {
+    //     let user_profiles = []
+    //     fetch("reviews")
+    //     .then((res) => res.json())
+    //     .then((res)=> user_profiles.push(res))
+    //     console.log("hi billy", user_profiles)
+    // }
 
-    console.log("reviews", review)
+    // showUserID()
+
     const stars = review.review.rating*.1/2
 
     return (

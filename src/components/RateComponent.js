@@ -7,6 +7,7 @@ import ReviewsContainer from '../containers/ReviewsContainer'
 
 const RateComponent = (resort) => {
 
+    // I think i need to change state at a higher level to trigger the change upon comment submission
     const user_info = useSelector(state => state.location)
     const [rating, setRating] = useState(0)
     const [review, setReview] = useState("")
@@ -14,6 +15,10 @@ const RateComponent = (resort) => {
 
     const handleRating = (e) => {
         setRating(e)
+    }
+
+    const handleChange = (e) => {
+        setReview(e.target.value)
     }
 
     const handleSubmit = (e) => {
@@ -37,16 +42,14 @@ const RateComponent = (resort) => {
         }).then((res) => {
             if (res.ok) {
                 res.json()
+                // console.log("user:", user)
             } else {
                 res.json().then((res) => dispatch(addErrors(res)))
-                console.log("error", res.status, res.statusText)
+                // console.log("error", res.status, res.statusText)
         }
         })
-}
-
-    const handleChange = (e) => {
-        setReview(e.target.value)
     }
+
 
     return (
         <div>

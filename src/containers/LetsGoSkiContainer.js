@@ -9,8 +9,8 @@ import NavBar from "./NavBar"
 const LetsGoSkiContainer = () => {
     const user_info = useSelector(state => state.location)
     const [resort, setResort ] = useState([])
-    console.log("LG container", resort.length)
-    console.log("LG container", user_info[0])
+    // console.log("LG container", resort.length)
+    // console.log("LG container", user_info[0])
 
     const setTheResort = (skiArea) => {
         setResort(skiArea)
