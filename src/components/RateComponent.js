@@ -23,6 +23,8 @@ const RateComponent = (resort) => {
 
     const handleSubmit = (e) => {
         let user = user_info[0].id
+        // console.log("comment submitted", user_info[0].email)
+        let userEmail = user_info[0].email
         let ski_area_id = resort.resort.id
         let stars = rating
         let comments = review
@@ -35,6 +37,7 @@ const RateComponent = (resort) => {
             },
             body: JSON.stringify({
                 user_id: user,
+                email: userEmail,
                 ski_area_id: ski_area_id,
                 rating: stars,
                 comments: comments

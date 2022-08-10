@@ -2,15 +2,14 @@ import { Rating } from '@mui/material';
 
 const ReviewShow = (review) => {
     
-    // const showUserID = () => {
-    //     let user_profiles = []
-    //     fetch("reviews")
-    //     .then((res) => res.json())
-    //     .then((res)=> user_profiles.push(res))
-    //     console.log("hi billy", user_profiles)
-    // }
+    // maybe this data should be pulled at a higher level, made into state and passed down
+    const showUserID = () => {
+        fetch("users")
+        .then((res) => res.json())
+        // .then(res => res.forEach(user => console.log("hi billy", user.email)))
+    }
 
-    // showUserID()
+    showUserID()
 
     const stars = review.review.rating*.1/2
 
@@ -20,6 +19,7 @@ const ReviewShow = (review) => {
                 <div class="card-body text-success">
                 <Rating name="read-only" value={stars} readOnly />
                 <p class="card-text"> {review.review.comments}</p>
+                <p class="card-text"> {review.review.email}</p>
                 </div>
                 
             </div>
