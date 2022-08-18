@@ -24,7 +24,7 @@ function NavBar() {
               <LogoutButton/>
               <MySavedLocations/>
               <LetsGoSkiContainer/>
-              <SpotifyButton />
+              {/* <SpotifyButton /> */}
             </Nav>
           </Navbar.Collapse>
         </Container>
