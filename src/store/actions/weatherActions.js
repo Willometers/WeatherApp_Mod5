@@ -1,5 +1,5 @@
 import APIKey from '../../APIKey'
-import { useNavigate } from 'react-router-dom'
+// import { useNavigate } from 'react-router-dom'
 // import { addErrors } from './errorActions'
 
 // ADD_WEATHER at start of program using browser location, physical location saved in store
