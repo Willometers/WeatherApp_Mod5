@@ -18,7 +18,7 @@ export const fetchCurrentWeather = (userLocation) => {
 
 // SEARCH_WEATHER via searchbar input to change q= and hold weather.location in store
 export const fetchSearchWeather = (searchLocation) => {   
-    return dispatch => { fetch(`${APIKey}&q=${searchLocation}&days=5&aqi=no&alerts=no`)
+    return dispatch => { fetch(`${process.env.REACT_APP_APIKey}&q=${searchLocation}&days=5&aqi=no&alerts=no`)
     .then((res) => {
         if (res.ok) {
             res.json().then((searchWeather) => dispatch(addSearchWeather(searchWeather)))
