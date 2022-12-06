@@ -1,4 +1,4 @@
-import GoogleKey from "../GoogleKey"
+// import GoogleKey from "../GoogleKey"
 
 const MapShow = (resort) => {
     const location = resort.resort
@@ -12,7 +12,7 @@ const MapShow = (resort) => {
         return (
             <div className="map">
                 <iframe
-                    src={`https://www.google.com/maps/embed/v1/place?key=${GoogleKey}&q=${location}&zoom=8`} allowFullScreen width="700" height="575">
+                    src={`https://www.google.com/maps/embed/v1/place?key=${process.env.REACT_APP_GoogleKey}&q=${location}&zoom=8`} allowFullScreen width="700" height="575">
                 </iframe>
             </div>
 

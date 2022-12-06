@@ -1,8 +1,8 @@
-import APIKey from '../../APIKey'
+// import APIKey from '../../APIKey'
 
 // SEARCH_AREA via dropdown input to change q= and hold weather.location in store
 export const fetchAreaWeather = (searchLocation) => {   
-    return dispatch => { fetch(`${APIKey}&q=${searchLocation}&days=5&aqi=no&alerts=no`)
+    return dispatch => { fetch(`${process.env.REACT_APP_APIKey}&q=${searchLocation}&days=5&aqi=no&alerts=no`)
     .then((res) => {
         if (res.ok) {
             res.json().then((searchWeather) => dispatch(addAreaWeather(searchWeather)))

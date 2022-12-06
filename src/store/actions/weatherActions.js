@@ -1,10 +1,10 @@
-import APIKey from '../../APIKey'
+// import APIKey from '../../APIKey'
 // import { useNavigate } from 'react-router-dom'
 // import { addErrors } from './errorActions'
 
 // ADD_WEATHER at start of program using browser location, physical location saved in store
 export const fetchCurrentWeather = (userLocation) => {   
-    return dispatch => { fetch(`${APIKey}&q=${userLocation.lat}${" "}${userLocation.long}&days=5&aqi=no&alerts=no`)
+    return dispatch => { fetch(`${process.env.REACT_APP_APIKey}&q=${userLocation.lat}${" "}${userLocation.long}&days=5&aqi=no&alerts=no`)
     .then((res) => {
          if (res.ok) {
              res.json().then((currentWeather) => dispatch(addCurrentWeather(currentWeather)))
