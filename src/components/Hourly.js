@@ -1,5 +1,6 @@
 import moment from 'moment';
 import {CardGroup, Card, Row, Col} from 'react-bootstrap'
+import NavBar from '../containers/NavBar.js'
 
 const Hourly = (weather) => {
   
@@ -9,6 +10,7 @@ const Hourly = (weather) => {
     if (weather === undefined)
         return (
             <div class="spinner-border text-primary" role="status">
+                <NavBar/>
                 <span class="sr-only">Loading...</span>
             </div>
         );

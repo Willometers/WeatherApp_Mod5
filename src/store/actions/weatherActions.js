@@ -3,6 +3,9 @@
 // import { addErrors } from './errorActions'
 
 // ADD_WEATHER at start of program using browser location, physical location saved in store
+
+
+
 export const fetchCurrentWeather = (userLocation) => {   
     return dispatch => { fetch(`${process.env.REACT_APP_APIKey}&q=${userLocation.lat}${" "}${userLocation.long}&days=5&aqi=no&alerts=no`)
     .then((res) => {

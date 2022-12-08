@@ -54,7 +54,7 @@ const LogoutButton = () => {
         else
             return (
                 <div>
-                    <button disabled >Logout</button>
+                    <button disabled>Logout</button>
                 </div>
             )
             else
