@@ -19,7 +19,7 @@ function App() {
   const dispatch = useDispatch()
 
   useEffect(() => { 
-    fetch("me")
+    fetch("https://rails-2n88.onrender.com/me")
     .then((res) => res.json())
     .then((res) => dispatch(addUser(res)))
     .then((res) => console.log("user", res))
