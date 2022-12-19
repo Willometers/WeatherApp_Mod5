@@ -15,7 +15,7 @@ const SaveButton = () => {
         const lat = weather.location.lat
         const lon = weather.location.lon
 
-        fetch("save", {
+        fetch("https://rails-2n88.onrender.com/save", {
         method: 'POST', 
         headers: {
         'Content-Type' : 'application/json',

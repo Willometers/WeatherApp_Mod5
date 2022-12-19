@@ -1,6 +1,6 @@
 
 export const fetchUsers = () => {   
-    return dispatch => { fetch(`allusers`)
+    return dispatch => { fetch(`https://rails-2n88.onrender.com/allusers`)
     .then((res) => {
         if (res.ok) {
             res.json().then((users) => dispatch(addUsers(users)))

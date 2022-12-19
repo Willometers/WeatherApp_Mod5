@@ -21,7 +21,7 @@ function Login() {
 
     function handleSubmit(e) {
         e.preventDefault()
-        fetch("login", {
+        fetch("https://rails-2n88.onrender.com/login", {
             method: 'POST', 
             headers: {
               'Content-Type': 'application/json',

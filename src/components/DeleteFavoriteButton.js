@@ -9,7 +9,7 @@ const DeleteFavoriteButton = (place) => {
         // e.preventDefault()
         const id = place.place.id
         console.log("target", place.place.id)
-        fetch("delete", {
+        fetch("https://rails-2n88.onrender.com/delete", {
             method: 'DELETE', 
             headers: {
             'Content-Type' : 'application/json',

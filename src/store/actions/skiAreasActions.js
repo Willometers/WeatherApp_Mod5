@@ -2,7 +2,7 @@
 
 // SEARCH_WEATHER via searchbar input to change q= and hold weather.location in store
 export const fetchSkiAreas = () => {   
-    return dispatch => { fetch(`skiareas`)
+    return dispatch => { fetch(`https://rails-2n88.onrender.com/skiareas`)
     .then((res) => {
         if (res.ok) {
             res.json().then((skiAreas) => dispatch(addSkiAreas(skiAreas)))

@@ -30,7 +30,7 @@ const RateComponent = (resort) => {
         let comments = review
         e.preventDefault()
         e.target.reset()
-        fetch("savereview", {
+        fetch("https://rails-2n88.onrender.com/savereview", {
             method: 'POST',
             headers: {
                 'Content-Type' : 'application/json',

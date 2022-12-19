@@ -29,7 +29,7 @@ function Signup() {
     function handleSubmit(e) {
         e.preventDefault()
         if (password === passwordConfirmation) {
-            fetch("signup", {
+            fetch("https://rails-2n88.onrender.com/signup", {
                 method: 'POST', 
                 headers: {
                   'Content-Type': 'application/json',

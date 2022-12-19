@@ -16,7 +16,7 @@ const LogoutButton = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        fetch("logout", {
+        fetch("https://rails-2n88.onrender.com/logout", {
             method: 'DELETE', 
             headers: {
             'Content-Type': 'application/json',
