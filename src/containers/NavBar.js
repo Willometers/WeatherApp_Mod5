@@ -21,9 +21,9 @@ function NavBar() {
               <HomeButton/>
               <HourlyButton/>
               <ForecastButton/>
-              <LogoutButton/>
-              <MySavedLocations/>
-              <LetsGoSkiContainer/>
+              {/* <LogoutButton/> */}
+              {/* <MySavedLocations/> */}
+              {/* <LetsGoSkiContainer/> */}
               {/* <SpotifyButton /> */}
             </Nav>
           </Navbar.Collapse>
