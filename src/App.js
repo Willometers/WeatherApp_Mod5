@@ -18,13 +18,13 @@ function App() {
 
   const dispatch = useDispatch()
 
-  useEffect(() => { 
-    fetch("https://rails-2n88.onrender.com/me")
-    .then((res) => res.json())
-    .then((res) => dispatch(addUser(res)))
-    .then((res) => console.log("user", res))
-    }, []
-  )
+  // useEffect(() => { 
+  //   fetch("https://rails-2n88.onrender.com/me")
+  //   .then((res) => res.json())
+  //   .then((res) => dispatch(addUser(res)))
+  //   .then((res) => console.log("user", res))
+  //   }, []
+  // )
   
 // i need this to be my state-updater/ re-render components on change
 
@@ -39,13 +39,13 @@ function App() {
     );
   })
 
-  useEffect(() => { 
-    dispatch(fetchSkiAreas())
-    }, [] )
+  // useEffect(() => { 
+  //   dispatch(fetchSkiAreas())
+  //   }, [] )
 
-  useEffect(() => { 
-    dispatch(fetchUsers())
-    }, [] )
+  // useEffect(() => { 
+  //   dispatch(fetchUsers())
+  //   }, [] )
 
   return (
     <Router>
