@@ -70,11 +70,11 @@ function App() {
             element={<HourlyContainer/>} 
             />
 
-          <Route 
+          {/* <Route 
             path="/login" 
             index 
             element={<Login/>} 
-            />
+            /> */}
 
           <Route 
             path="/errors" 
@@ -82,17 +82,17 @@ function App() {
             element={<ErrorShow/>} 
             />
 
-          <Route 
+          {/* <Route 
             path="/saved" 
             index 
             element={<MySavedLocationsShow/>} 
-            />
+            /> */}
 
-          <Route 
+          {/* <Route 
             path="/goski" 
             index 
             element={<LetsGoSkiContainer/>} 
-            />
+            /> */}
           </Routes>
       </div>
     </Router>
