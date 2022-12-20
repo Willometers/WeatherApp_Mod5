@@ -2,10 +2,10 @@ import SearchBar from '../components/SearchBar.js'
 import HomeButton from "../components/HomeButton"
 import ForecastButton from "../components/ForecastButton"
 import HourlyButton from "../components/HourlyButton"
-import LogoutButton from "../components/LogoutButton"
-import MySavedLocations from "./MySavedLocations"
+// import LogoutButton from "../components/LogoutButton"
+// import MySavedLocations from "./MySavedLocations"
 import { Navbar, Nav, Container } from 'react-bootstrap'
-import LetsGoSkiContainer from '../components/LetsGoSkiButton.js'
+// import LetsGoSkiContainer from '../components/LetsGoSkiButton.js'
 // import SpotifyButton from '../components/SpotifyButton.js'
 
 function NavBar() {

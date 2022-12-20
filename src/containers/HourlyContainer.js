@@ -24,6 +24,8 @@ function HourlyContainers() {
     else
         return (
             <div>
+                <ErrorShow/>
+                <NavBar />
                 <h2 style={{color:'red'}}>loading...</h2>
             </div>
         );

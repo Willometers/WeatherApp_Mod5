@@ -15,8 +15,7 @@ import { useSelector } from "react-redux"
                 )
             else
             return(
-                <div>
-                </div>
+              null
             )
 
 // no superfluous return
